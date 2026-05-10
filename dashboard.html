@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | GrantPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            transition: var(--transition-base);
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+        .stat-card {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 20px;
+            background: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="d-flex align-items-center gap-2 mb-5">
+                <i data-lucide="shield-check" class="text-dark"></i>
+                <span class="fw-bold fs-4">GrantPro</span>
+            </a>
+            
+            <nav class="flex-grow-1">
+                <a href="#" class="sidebar-link active"><i data-lucide="layout-grid"></i> Overview</a>
+                <a href="#" class="sidebar-link"><i data-lucide="file-text"></i> Active Grants</a>
+                <a href="#" class="sidebar-link"><i data-lucide="calendar"></i> Deadlines</a>
+                <a href="#" class="sidebar-link"><i data-lucide="pie-chart"></i> Financials</a>
+                <a href="#" class="sidebar-link"><i data-lucide="shield"></i> Compliance</a>
+                <a href="#" class="sidebar-link"><i data-lucide="folder"></i> Documents</a>
+            </nav>
+            
+            <div class="mt-auto">
+                <a href="#" class="sidebar-link"><i data-lucide="settings"></i> Settings</a>
+                <div class="d-flex align-items-center gap-3 p-3 mt-3 border-top">
+                    <img src="https://ui-avatars.com/api/?name=Alex+Grant&background=random" class="rounded-circle" width="40" alt="Profile">
+                    <div class="small">
+                        <p class="mb-0 fw-bold">Alex Grant</p>
+                        <span class="text-muted">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h1 class="h2 mb-1">Portfolio Overview</h1>
+                    <p class="text-muted small">Welcome back, Alex. You have 3 reports due this week.</p>
+                </div>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-outline-dark rounded-pill px-4"><i data-lucide="plus" class="me-2"></i> New Grant</button>
+                    <div class="position-relative">
+                        <button class="btn btn-light rounded-circle p-2"><i data-lucide="bell"></i></button>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Row -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-muted small mb-2">Total Managed</p>
+                        <h3 class="fw-bold mb-0">$12.4M</h3>
+                        <span class="text-success small"><i data-lucide="trending-up" style="width: 14px;"></i> +14% vs last yr</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-muted small mb-2">Active Grants</p>
+                        <h3 class="fw-bold mb-0">18</h3>
+                        <span class="text-muted small">Across 4 donors</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-muted small mb-2">Compliance Score</p>
+                        <h3 class="fw-bold mb-0">98/100</h3>
+                        <span class="text-success small">Excellent</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <p class="text-muted small mb-2">Days to Audit</p>
+                        <h3 class="fw-bold mb-0">24</h3>
+                        <span class="text-warning small">NSF Annual Review</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="row g-4">
+                <!-- Recent Grants Table -->
+                <div class="col-lg-8">
+                    <div class="glass-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="mb-0">Active Portfolio</h4>
+                            <a href="#" class="small fw-bold text-dark">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="border-0">Grant Title</th>
+                                        <th class="border-0">Donor</th>
+                                        <th class="border-0">Utilization</th>
+                                        <th class="border-0">Status</th>
+                                        <th class="border-0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="mb-0 fw-bold">Clean Water Initiative</p>
+                                            <span class="text-muted small">ID: GH-2026-04</span>
+                                        </td>
+                                        <td>USAID</td>
+                                        <td style="width: 150px;">
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-dark" style="width: 65%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill">On Track</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="mb-0 fw-bold">COVID Recovery Fund</p>
+                                            <span class="text-muted small">ID: NIH-RE-98</span>
+                                        </td>
+                                        <td>NIH</td>
+                                        <td>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-dark" style="width: 92%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill">Near Closeout</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="mb-0 fw-bold">STEM Research Grant</p>
+                                            <span class="text-muted small">ID: NSF-2025-X</span>
+                                        </td>
+                                        <td>NSF</td>
+                                        <td>
+                                            <div class="progress" style="height: 6px;">
+                                                <div class="progress-bar bg-dark" style="width: 45%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill">On Track</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Deadlines -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-4">
+                        <h4 class="mb-4">Reporting Pipeline</h4>
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
+                                <span class="d-block fw-bold fs-5">12</span>
+                                <span class="small text-muted uppercase">MAY</span>
+                            </div>
+                            <div>
+                                <p class="mb-0 fw-bold">Quarterly FFR</p>
+                                <span class="text-muted small">USAID - Clean Water</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
+                                <span class="d-block fw-bold fs-5">15</span>
+                                <span class="small text-muted uppercase">MAY</span>
+                            </div>
+                            <div>
+                                <p class="mb-0 fw-bold">Programmatic Report</p>
+                                <span class="text-muted small">NIH - COVID Recovery</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
+                                <span class="d-block fw-bold fs-5">24</span>
+                                <span class="small text-muted uppercase">MAY</span>
+                            </div>
+                            <div>
+                                <p class="mb-0 fw-bold">Audit Documentation</p>
+                                <span class="text-muted small">NSF Annual Review</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark w-100 py-3 mt-4 rounded-pill">View Calendar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

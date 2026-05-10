@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrantPro | Freelance Grant Management Specialist (Post-Award)</title>
+    <meta name="description" content="Expert Post-Award Grant Management for Nonprofits, NGOs, and Research Institutions. Ensure compliance, optimize reporting, and secure your funding future.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <i data-lucide="shield-check" class="text-dark"></i>
+                <span class="fw-bold fs-4">GrantPro</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="grant-lifecycle.html">Lifecycle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case-studies.html">Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 d-flex gap-3 align-items-center">
+                        <button id="theme-toggle" class="btn btn-link p-0 text-dark"><i data-lucide="moon"></i></button>
+                        <button id="rtl-toggle" class="btn btn-link p-0 text-dark fw-bold">RTL</button>
+                        <a href="dashboard.html" class="nav-link p-0"><i data-lucide="layout-dashboard"></i></a>
+                        <a href="login.html" class="btn btn-premium btn-premium-primary py-2 px-4">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-5 mt-5">
+        <div class="container pt-5">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <h1 class="display-3 mb-4 reveal">Securing the <span class="text-secondary">Future</span> of Your Funding</h1>
+                    <p class="lead mb-5 reveal" style="transition-delay: 0.2s;">Expert Post-Award Grant Management. We navigate the complexities of compliance, financial reporting, and audit readiness so you can focus on your mission.</p>
+                    <div class="d-flex gap-3 reveal" style="transition-delay: 0.4s;">
+                        <a href="contact.html" class="btn btn-premium btn-premium-primary">Schedule Consultation <i data-lucide="arrow-right"></i></a>
+                        <a href="services.html" class="btn btn-premium btn-premium-secondary">View Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="position-relative reveal" style="transition-delay: 0.6s;">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="Grant Management" class="img-fluid rounded-5 shadow-lg">
+                        <div class="glass-card position-absolute bottom-0 start-0 p-4 m-4 d-none d-md-block">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-dark text-white rounded-circle p-3">
+                                    <i data-lucide="bar-chart-3"></i>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0 fw-bold">$50M+</h4>
+                                    <p class="mb-0 text-muted small">Managed Funds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section py-5 bg-secondary bg-opacity-10 mt-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <div class="p-4">
+                        <h2 class="display-5 fw-bold mb-0">$<span class="counter" data-target="120">0</span>M+</h2>
+                        <p class="text-muted">Total Grants Managed</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4">
+                        <h2 class="display-5 fw-bold mb-0"><span class="counter" data-target="98">0</span>%</h2>
+                        <p class="text-muted">Audit Success Rate</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4">
+                        <h2 class="display-5 fw-bold mb-0"><span class="counter" data-target="450">0</span>+</h2>
+                        <p class="text-muted">Reports Submitted</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4">
+                        <h2 class="display-5 fw-bold mb-0"><span class="counter" data-target="15">0</span>+</h2>
+                        <p class="text-muted">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3 reveal">Specialized Post-Award Expertise</h2>
+                <p class="text-muted lead mx-auto" style="max-width: 700px;">Comprehensive solutions for every stage of the grant lifecycle after the award letter arrives.</p>
+            </div>
+            <div class="row g-4 stagger-list">
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100">
+                        <i data-lucide="clipboard-check" class="mb-4 text-primary" style="width: 48px; height: 48px;"></i>
+                        <h3 class="h4 mb-3">Compliance Monitoring</h3>
+                        <p class="text-muted">Ongoing oversight to ensure adherence to donor regulations and internal policies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100">
+                        <i data-lucide="pie-chart" class="mb-4 text-primary" style="width: 48px; height: 48px;"></i>
+                        <h3 class="h4 mb-3">Financial Reconciliation</h3>
+                        <p class="text-muted">Precise budget vs. actual analysis and expenditure tracking for multiple funding streams.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100">
+                        <i data-lucide="file-text" class="mb-4 text-primary" style="width: 48px; height: 48px;"></i>
+                        <h3 class="h4 mb-3">Narrative Reporting</h3>
+                        <p class="text-muted">Bridging the gap between program outcomes and technical reporting requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="workflow-section py-5 bg-dark text-white rounded-5 mx-3 mx-lg-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h2 class="display-5 mb-4 text-white">Streamlined Reporting Workflow</h2>
+                    <p class="lead mb-5 text-light opacity-75">We transform chaotic spreadsheets into structured, audit-ready reports that donors love.</p>
+                    <ul class="list-unstyled stagger-list">
+                        <li class="d-flex gap-3 mb-4">
+                            <div class="bg-white text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 class="h5 mb-1">Data Aggregation</h4>
+                                <p class="small text-light opacity-50">Collecting financial and programmatic data from all stakeholders.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-4">
+                            <div class="bg-white text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 class="h5 mb-1">Validation & Cleanup</h4>
+                                <p class="small text-light opacity-50">Ensuring every expense is eligible and correctly allocated.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <div class="bg-white text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 class="h5 mb-1">Submission & Archive</h4>
+                                <p class="small text-light opacity-50">On-time filing with secure digital documentation storage.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Workflow" class="img-fluid rounded-5 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 mt-5 border-top">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="d-flex align-items-center gap-2 mb-4" href="index.html">
+                        <i data-lucide="shield-check" class="text-dark"></i>
+                        <span class="fw-bold fs-4">GrantPro</span>
+                    </a>
+                    <p class="text-muted">Providing high-level post-award expertise to organizations that change the world. Compliance isn't just a requirement; it's our specialty.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-dark"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-dark"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-dark"><i data-lucide="mail"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-muted">Services</a></li>
+                        <li class="mb-2"><a href="grant-lifecycle.html" class="text-muted">Lifecycle</a></li>
+                        <li class="mb-2"><a href="case-studies.html" class="text-muted">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="resources-templates.html" class="text-muted">Templates</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Compliance Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p class="text-muted small">Get monthly compliance updates and grant management tips.</p>
+                    <form class="mt-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control border-0 bg-light p-3" placeholder="Enter your email">
+                            <button class="btn btn-dark px-4" type="button">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between py-4 mt-5 border-top text-muted small">
+                <p>&copy; 2026 GrantPro. All rights reserved.</p>
+                <div class="d-flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
