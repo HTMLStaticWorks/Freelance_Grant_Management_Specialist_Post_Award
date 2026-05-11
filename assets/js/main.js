@@ -1,83 +1,57 @@
-/* 
-    Freelance Grant Management Specialist - Main Logic
-*/
+$(document).ready(function() {
+    // 1. Initialize Lucide Icons
+    lucide.createIcons();
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
-        smoothTouch: false,
-        touchMultiplier: 2,
-        infinite: false,
-    });
+    // 3. Theme Toggle Logic
+    const toggleTheme = () => {
+        const body = document.body;
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('grantpro-theme', newTheme);
+        updateIcons(newTheme);
+    };
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // 2. Theme Toggle (Dark/Light)
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            let newTheme = theme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-    }
-
-    function updateThemeIcon(theme) {
-        const icon = document.querySelector('#theme-toggle i');
+    const updateIcons = (theme) => {
+        const icon = document.querySelector('#theme-toggle-icon');
         if (icon) {
-            icon.className = theme === 'light' ? 'lucide-moon' : 'lucide-sun';
-            // Replace with actual lucide icons after they load if using lucide script
-            if (window.lucide) lucide.createIcons();
+            icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
         }
-    }
+    };
 
-    // 3. RTL Toggle
-    const rtlToggle = document.getElementById('rtl-toggle');
-    const isRTL = localStorage.getItem('rtl') === 'true';
+    // Load saved theme
+    const savedTheme = localStorage.getItem('grantpro-theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    updateIcons(savedTheme);
 
-    if (isRTL) {
-        document.documentElement.setAttribute('dir', 'rtl');
-    }
+    $('#theme-toggle').on('click', toggleTheme);
 
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
-            const currentDir = document.documentElement.getAttribute('dir');
-            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-            document.documentElement.setAttribute('dir', newDir);
-            localStorage.setItem('rtl', newDir === 'rtl');
-        });
-    }
+    // 4. RTL Toggle Logic
+    $('#rtl-toggle').on('click', function() {
+        const html = document.documentElement;
+        const currentDir = html.getAttribute('dir');
+        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+        html.setAttribute('dir', newDir);
+        localStorage.setItem('grantpro-dir', newDir);
+    });
 
-    // 4. Navbar Scroll Effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+    const savedDir = localStorage.getItem('grantpro-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+
+    // 5. Reset Reveal Elements (Make them visible immediately)
+    $('.reveal-up').css({ 'opacity': 1, 'transform': 'none' });
+
+    // 6. Header scroll effect
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+            $('.navbar-custom').addClass('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            $('.navbar-custom').removeClass('scrolled');
         }
     });
 
-    // 5. Initialize Lucide Icons
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    // Active link highlighting
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    $(`.nav-link-custom[href="${currentPath}"]`).addClass('active');
 });

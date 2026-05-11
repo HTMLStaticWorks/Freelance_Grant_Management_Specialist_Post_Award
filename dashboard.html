@@ -1,227 +1,319 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | GrantPro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard | Aidora Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            transition: var(--transition-base);
-        }
-        .sidebar-link:hover, .sidebar-link.active {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-        .stat-card {
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 20px;
-            background: var(--bg-primary);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
+<body data-theme="light">
 
-    <div class="dashboard-layout">
+    <div class="dashboard-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <a href="index.html" class="d-flex align-items-center gap-2 mb-5">
-                <i data-lucide="shield-check" class="text-dark"></i>
-                <span class="fw-bold fs-4">GrantPro</span>
-            </a>
-            
+            <div class="mb-5">
+                                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <i data-lucide="shield-check" class="me-2 text-primary" style="width: 28px; height: 28px;"></i>
+                    <span class="fw-bold fs-5 text-primary">Aidora</span>
+                </a>
+            </div>
+
             <nav class="flex-grow-1">
-                <a href="#" class="sidebar-link active"><i data-lucide="layout-grid"></i> Overview</a>
-                <a href="#" class="sidebar-link"><i data-lucide="file-text"></i> Active Grants</a>
-                <a href="#" class="sidebar-link"><i data-lucide="calendar"></i> Deadlines</a>
-                <a href="#" class="sidebar-link"><i data-lucide="pie-chart"></i> Financials</a>
-                <a href="#" class="sidebar-link"><i data-lucide="shield"></i> Compliance</a>
-                <a href="#" class="sidebar-link"><i data-lucide="folder"></i> Documents</a>
+                <a href="dashboard.html" class="sidebar-link active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="db-active-grants.html" class="sidebar-link"><i data-lucide="folder-kanban"></i> Active Grants</a>
+                <a href="db-deadlines.html" class="sidebar-link"><i data-lucide="calendar"></i> Deadlines</a>
+                <a href="db-compliance.html" class="sidebar-link"><i data-lucide="clipboard-check"></i> Compliance</a>
+                <a href="db-financials.html" class="sidebar-link"><i data-lucide="bar-chart-2"></i> Financials</a>
+                <a href="db-documents.html" class="sidebar-link"><i data-lucide="file-text"></i> Documents</a>
             </nav>
-            
-            <div class="mt-auto">
-                <a href="#" class="sidebar-link"><i data-lucide="settings"></i> Settings</a>
-                <div class="d-flex align-items-center gap-3 p-3 mt-3 border-top">
-                    <img src="https://ui-avatars.com/api/?name=Alex+Grant&background=random" class="rounded-circle" width="40" alt="Profile">
-                    <div class="small">
-                        <p class="mb-0 fw-bold">Alex Grant</p>
-                        <span class="text-muted">Administrator</span>
-                    </div>
-                </div>
+
+            <div class="mt-auto pt-4 border-top">
+                <a href="#" class="sidebar-link text-danger"><i data-lucide="log-out"></i> Logout</a>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
-            <header class="d-flex justify-content-between align-items-center mb-5">
+        <main class="dashboard-main">
+            <header class="topbar">
                 <div>
-                    <h1 class="h2 mb-1">Portfolio Overview</h1>
-                    <p class="text-muted small">Welcome back, Alex. You have 3 reports due this week.</p>
+                    <h4 class="mb-0">Portfolio Overview</h4>
+                    <p class="small text-secondary mb-0">Monday, 11 May 2026</p>
                 </div>
-                <div class="d-flex gap-3">
-                    <button class="btn btn-outline-dark rounded-pill px-4"><i data-lucide="plus" class="me-2"></i> New Grant</button>
-                    <div class="position-relative">
-                        <button class="btn btn-light rounded-circle p-2"><i data-lucide="bell"></i></button>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
+                        <i data-lucide="moon" id="theme-toggle-icon"></i>
+                    </button>
+                                                                                <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <button class="btn btn-link text-primary p-0"><i data-lucide="bell"></i></button>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-primary" data-bs-toggle="dropdown">
+                            <div class="bg-primary  rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">SJ</div>
+                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                            <li><a class="dropdown-item small" href="#">Profile</a></li>
+                            <li><a class="dropdown-item small" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
+                        </ul>
                     </div>
                 </div>
             </header>
 
-            <!-- Stats Row -->
-            <div class="row g-4 mb-5">
+            <!-- KPI Cards -->
+            <div class="row g-4 mb-4">
                 <div class="col-md-3">
-                    <div class="stat-card">
-                        <p class="text-muted small mb-2">Total Managed</p>
-                        <h3 class="fw-bold mb-0">$12.4M</h3>
-                        <span class="text-success small"><i data-lucide="trending-up" style="width: 14px;"></i> +14% vs last yr</span>
+                    <div class="kpi-card">
+                        <p class="small text-secondary mb-1">Total Active Grants</p>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h3 class="mb-0">24</h3>
+                            <span class="text-success small"><i data-lucide="trending-up"></i> +2</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="stat-card">
-                        <p class="text-muted small mb-2">Active Grants</p>
-                        <h3 class="fw-bold mb-0">18</h3>
-                        <span class="text-muted small">Across 4 donors</span>
+                    <div class="kpi-card">
+                        <p class="small text-secondary mb-1">Total Funding</p>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h3 class="mb-0">$12.4M</h3>
+                            <span class="text-primary small">Portfolio Val</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="stat-card">
-                        <p class="text-muted small mb-2">Compliance Score</p>
-                        <h3 class="fw-bold mb-0">98/100</h3>
-                        <span class="text-success small">Excellent</span>
+                    <div class="kpi-card">
+                        <p class="small text-secondary mb-1">Compliance Score</p>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h3 class="mb-0">98.2%</h3>
+                            <div class="status-indicator bg-success"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="stat-card">
-                        <p class="text-muted small mb-2">Days to Audit</p>
-                        <h3 class="fw-bold mb-0">24</h3>
-                        <span class="text-warning small">NSF Annual Review</span>
+                    <div class="kpi-card">
+                        <p class="small text-secondary mb-1">Next Deadline</p>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <h3 class="mb-0">4 Days</h3>
+                            <span class="text-warning small"><i data-lucide="alert-circle"></i> NIH R01</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Grid -->
-            <div class="row g-4">
-                <!-- Recent Grants Table -->
-                <div class="col-lg-8">
-                    <div class="glass-card p-4">
+            <!-- Deadlines & Compliance Row -->
+            <div class="row g-4 mb-4" id="deadlines">
+                <div class="col-lg-6">
+                    <div class="premium-card theme-card  h-100">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h4 class="mb-0">Active Portfolio</h4>
-                            <a href="#" class="small fw-bold text-dark">View All</a>
+                            <h5 class="mb-0">Upcoming Deadlines</h5>
+                            <button class="btn btn-link btn-sm">View Calendar</button>
                         </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th class="border-0">Grant Title</th>
-                                        <th class="border-0">Donor</th>
-                                        <th class="border-0">Utilization</th>
-                                        <th class="border-0">Status</th>
-                                        <th class="border-0"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <p class="mb-0 fw-bold">Clean Water Initiative</p>
-                                            <span class="text-muted small">ID: GH-2026-04</span>
-                                        </td>
-                                        <td>USAID</td>
-                                        <td style="width: 150px;">
-                                            <div class="progress" style="height: 6px;">
-                                                <div class="progress-bar bg-dark" style="width: 65%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill">On Track</span></td>
-                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="mb-0 fw-bold">COVID Recovery Fund</p>
-                                            <span class="text-muted small">ID: NIH-RE-98</span>
-                                        </td>
-                                        <td>NIH</td>
-                                        <td>
-                                            <div class="progress" style="height: 6px;">
-                                                <div class="progress-bar bg-dark" style="width: 92%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill">Near Closeout</span></td>
-                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="mb-0 fw-bold">STEM Research Grant</p>
-                                            <span class="text-muted small">ID: NSF-2025-X</span>
-                                        </td>
-                                        <td>NSF</td>
-                                        <td>
-                                            <div class="progress" style="height: 6px;">
-                                                <div class="progress-bar bg-dark" style="width: 45%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill">On Track</span></td>
-                                        <td><button class="btn btn-light btn-sm rounded-circle"><i data-lucide="more-vertical"></i></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="deadline-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <h6 class="mb-0">Interim Financial Report</h6>
+                                <span class="badge bg-danger">In 2 Days</span>
+                            </div>
+                            <p class="x-small text-secondary mb-0">USAID Frontiers - #G-9901</p>
+                        </div>
+                        <div class="deadline-item" style="border-color: var(--warning);">
+                            <div class="d-flex justify-content-between mb-1">
+                                <h6 class="mb-0">Personnel Effort Certification</h6>
+                                <span class="badge bg-warning ">In 5 Days</span>
+                            </div>
+                            <p class="x-small text-secondary mb-0">NIH R01 Heart Research</p>
+                        </div>
+                        <div class="deadline-item" style="border-color: var(--success);">
+                            <div class="d-flex justify-content-between mb-1">
+                                <h6 class="mb-0">Equipment Inventory Audit</h6>
+                                <span class="badge bg-success">In 12 Days</span>
+                            </div>
+                            <p class="x-small text-secondary mb-0">Gates Foundation - Water Project</p>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6" id="compliance">
+                    <div class="premium-card theme-card  h-100">
+                        <h5 class="mb-4">Compliance Health Monitor</h5>
+                        <div class="compliance-check">
+                            <i data-lucide="check-circle" class="text-success"></i>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 small">Uniform Guidance (2 CFR 200)</h6>
+                                <div class="progress mt-2" style="height: 4px;">
+                                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compliance-check">
+                            <i data-lucide="alert-circle" class="text-warning"></i>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 small">Fly America Act Compliance</h6>
+                                <div class="progress mt-2" style="height: 4px;">
+                                    <div class="progress-bar bg-warning" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <span class="small text-warning fw-bold">85%</span>
+                        </div>
+                        <div class="compliance-check">
+                            <i data-lucide="x-circle" class="text-danger"></i>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 small">Sub-awardee Risk Assessment</h6>
+                                <div class="progress mt-2" style="height: 4px;">
+                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <span class="small text-danger fw-bold">Action Req.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Upcoming Deadlines -->
-                <div class="col-lg-4">
-                    <div class="glass-card p-4">
-                        <h4 class="mb-4">Reporting Pipeline</h4>
-                        <div class="d-flex gap-3 mb-4">
-                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
-                                <span class="d-block fw-bold fs-5">12</span>
-                                <span class="small text-muted uppercase">MAY</span>
+            <!-- Financials & Documents Row -->
+            <div class="row g-4 mb-4" id="financials">
+                <div class="col-lg-7">
+                    <div class="premium-card theme-card  h-100">
+                        <h5 class="mb-4">Financial Allocation Breakdown</h5>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="p-3 border rounded-3">
+                                    <p class="x-small text-secondary mb-1">Direct Costs</p>
+                                    <h4 class="mb-0">$8.2M</h4>
+                                    <div class="small text-success mt-1">66.1% of Portfolio</div>
+                                </div>
                             </div>
-                            <div>
-                                <p class="mb-0 fw-bold">Quarterly FFR</p>
-                                <span class="text-muted small">USAID - Clean Water</span>
+                            <div class="col-6">
+                                <div class="p-3 border rounded-3">
+                                    <p class="x-small text-secondary mb-1">Indirect (F&A)</p>
+                                    <h4 class="mb-0">$2.4M</h4>
+                                    <div class="small text-primary mt-1">19.3% of Portfolio</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border rounded-3">
+                                    <p class="x-small text-secondary mb-1">Unobligated Balance</p>
+                                    <h4 class="mb-0">$1.8M</h4>
+                                    <div class="small text-warning mt-1">14.6% Remaining</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border rounded-3">
+                                    <p class="x-small text-secondary mb-1">Cost Sharing</p>
+                                    <h4 class="mb-0">$450K</h4>
+                                    <div class="small text-secondary mt-1">Institutional Match</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex gap-3 mb-4">
-                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
-                                <span class="d-block fw-bold fs-5">15</span>
-                                <span class="small text-muted uppercase">MAY</span>
-                            </div>
-                            <div>
-                                <p class="mb-0 fw-bold">Programmatic Report</p>
-                                <span class="text-muted small">NIH - COVID Recovery</span>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <div class="bg-light p-3 rounded-4 text-center" style="min-width: 60px;">
-                                <span class="d-block fw-bold fs-5">24</span>
-                                <span class="small text-muted uppercase">MAY</span>
-                            </div>
-                            <div>
-                                <p class="mb-0 fw-bold">Audit Documentation</p>
-                                <span class="text-muted small">NSF Annual Review</span>
-                            </div>
-                        </div>
-                        <button class="btn btn-dark w-100 py-3 mt-4 rounded-pill">View Calendar</button>
                     </div>
                 </div>
+                <div class="col-lg-5" id="documents">
+                    <div class="premium-card theme-card  h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">Recent Documents</h5>
+                            <button class="btn btn-link btn-sm"><i data-lucide="plus"></i></button>
+                        </div>
+                        <div class="document-row">
+                                                            <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
+                        <i data-lucide="moon" id="theme-toggle-icon"></i>
+                    </button>
+                                                                                <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
+                        <i data-lucide="user"></i>
+                    </a>
+                </div>
+                            </div>
+                            <button class="btn btn-link btn-sm text-secondary"><i data-lucide="download"></i></button>
+                        </div>
+                        <div class="document-row">
+                                                            <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
+                        <i data-lucide="moon" id="theme-toggle-icon"></i>
+                    </button>
+                                                                                <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
+                        <i data-lucide="user"></i>
+                    </a>
+                </div>
+                            </div>
+                            <button class="btn btn-link btn-sm text-secondary"><i data-lucide="download"></i></button>
+                        </div>
+                        <div class="document-row">
+                                                            <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
+                        <i data-lucide="moon" id="theme-toggle-icon"></i>
+                    </button>
+                                                                                <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
+                        <i data-lucide="user"></i>
+                    </a>
+                </div>
+                            </div>
+                            <button class="btn btn-link btn-sm text-secondary"><i data-lucide="download"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Grant Tracking Section -->
+            <div class="table-premium" id="active-grants">
+                <div class="p-4 border-bottom d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Active Grant Tracking</h5>
+                    <button class="btn btn-primary-premium btn-sm">Export Data</button>
+                </div>
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Grant ID</th>
+                            <th>Donor</th>
+                            <th>Status</th>
+                            <th>Spent</th>
+                            <th>Budget</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="small">
+                        <tr>
+                            <td>#G-9901</td>
+                            <td>USAID</td>
+                            <td><span class="badge bg-success-subtle text-success">Healthy</span></td>
+                            <td>$450,000</td>
+                            <td>$1,200,000</td>
+                            <td><button class="btn btn-link btn-sm p-0"><i data-lucide="more-horizontal"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>#G-8822</td>
+                            <td>NIH</td>
+                            <td><span class="badge bg-warning-subtle text-warning">Review</span></td>
+                            <td>$890,000</td>
+                            <td>$900,000</td>
+                            <td><button class="btn btn-link btn-sm p-0"><i data-lucide="more-horizontal"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 </body>
 </html>
+
+
+
+
+
+
+

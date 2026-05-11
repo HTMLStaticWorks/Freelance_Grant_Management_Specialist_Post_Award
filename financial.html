@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Aidora</title>
+    <title>Financial Reconciliation | Aidora</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -49,98 +49,47 @@
 
     <section class="section-padding ">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-5 reveal-up">
-                    <h1 class="display-medium mb-4">Let's Discuss Your Compliance Needs</h1>
-                    <p class="mb-5">Schedule a consultation with our post-award specialists to audit-proof your grant portfolio.</p>
-                    
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="p-3  rounded-circle shadow-sm h-100"><i data-lucide="mail" class="text-primary"></i></div>
-                        <div>
-                            <h6>Email Us</h6>
-                            <p class="text-secondary small">specialist@Aidora.com</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="p-3  rounded-circle shadow-sm h-100"><i data-lucide="phone" class="text-primary"></i></div>
-                        <div>
-                            <h6>Call Us</h6>
-                            <p class="text-secondary small">+1 (555) 012-3456</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex gap-4">
-                        <div class="p-3  rounded-circle shadow-sm h-100"><i data-lucide="map-pin" class="text-primary"></i></div>
-                        <div>
-                            <h6>Office</h6>
-                            <p class="text-secondary small">123 Compliance Way, Washington D.C.</p>
-                        </div>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <h1 class="display-medium mb-4">Precision Financial Reconciliation</h1>
+                        <p class="text-premium">Eliminate budget variances and ensure every dollar is accounted for with our automated reconciliation engine.</p>
                     </div>
                 </div>
-
-                <div class="col-lg-7 reveal-up">
-                    <div class="premium-card theme-card ">
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="John Doe" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-bold">Organization</label>
-                                    <input type="text" class="form-control" placeholder="NGO / University" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold">Work Email</label>
-                                    <input type="email" class="form-control" placeholder="john@org.com" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold">Service Interest</label>
-                                    <select class="form-select">
-                                        <option>Grant Compliance</option>
-                                        <option>Financial Monitoring</option>
-                                        <option>Audit Preparation</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-bold">Message</label>
-                                    <textarea class="form-control" rows="4" placeholder="How can we help?"></textarea>
-                                </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit" class="btn-premium btn-primary-premium w-100 justify-content-center">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+                <div class="col-lg-6">
+                    <div class="reveal-up premium-card theme-card  shadow-lg ">
+                        <canvas id="varianceChart" height="300"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="section-padding">
         <div class="container">
-            <div class="text-center mb-5 reveal-up">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 reveal-up">
-                    <div class="accordion accordion-flush" id="faqAccordion">
-                        <div class="accordion-item bg-transparent border-bottom">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    What types of grants do you manage?
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body small">
-                                    We specialize in federal grants (NIH, NSF, USAID, DoD), large foundation awards (Gates, Ford), and international NGO funding.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more FAQs as needed -->
+            <div class="row g-4">
+                <div class="col-md-3 reveal-up">
+                    <div class="kpi-card text-center">
+                        <h2 class="text-primary">$240M</h2>
+                        <p class="small text-secondary fw-bold">Annual Reconciled</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal-up" style="transition-delay: 0.1s;">
+                    <div class="kpi-card text-center">
+                        <h2 class="text-primary">99.9%</h2>
+                        <p class="small text-secondary fw-bold">Accuracy Rate</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal-up" style="transition-delay: 0.2s;">
+                    <div class="kpi-card text-center">
+                        <h2 class="text-primary">&lt;1%</h2>
+                        <p class="small text-secondary fw-bold">Variance Margin</p>
+                    </div>
+                </div>
+                <div class="col-md-3 reveal-up" style="transition-delay: 0.3s;">
+                    <div class="kpi-card text-center">
+                        <h2 class="text-primary">12</h2>
+                        <p class="small text-secondary fw-bold">Currencies Supported</p>
                     </div>
                 </div>
             </div>

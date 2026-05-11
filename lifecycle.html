@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Lifecycle | Aidora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .timeline { position: relative; padding: 50px 0; }
+        .timeline-line { position: absolute; left: 50%; width: 2px; height: 100%; background: var(--border-color); transform: translateX(-50%); z-index: 1; }
+        .timeline-item { position: relative; margin-bottom: 80px; z-index: 2; }
+        .timeline-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary); }
+        .timeline-content { width: 45%; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: auto; text-align: left; }
+        .timeline-item:nth-child(odd) .timeline-content { text-align: right; }
+        @media (max-width: 768px) {
+            .timeline-line { left: 30px; }
+            .timeline-dot { left: 30px; }
+            .timeline-content { width: 80%; margin-left: 60px !important; text-align: left !important; }
+        }
+    </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body data-theme="light" class="page-lifecycle">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid px-lg-5">
+                                                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
+                <span class="fw-bold fs-4 text-primary">Aidora</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link nav-link-custom active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="lifecycle.html">Grant Lifecycle</a>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-bold text-accent"
+                            href="dashboard.html">Dashboard</a></li>
+                </ul>
+                                                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
+                        <i data-lucide="moon" id="theme-toggle-icon"></i>
+                    </button>
+                                                                                <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
+                        <i data-lucide="user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding  text-center">
+        <div class="container">
+            <h1 class="display-medium reveal-up">Mastering the Grant Lifecycle</h1>
+            <p class="text-premium reveal-up">From the moment of award notification to the final closeout report, we manage every step with precision.</p>
+        </div>
+    </section>
+
+    <section class="section-padding ">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>1. Award Notification</h3>
+                        <p class="text-secondary">Analysis of the Notice of Award (NoA), terms and conditions, and reporting requirements initialization.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2. System Setup</h3>
+                        <p class="text-secondary">Configuration of financial systems, chart of accounts, and compliance tracking workflows.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>3. Resource Allocation</h3>
+                        <p class="text-secondary">Personnel effort tracking setup and sub-award management initiation.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>4. Active Monitoring</h3>
+                        <p class="text-secondary">Ongoing expense review, compliance checks, and budget burn-rate analysis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>5. Interim Reporting</h3>
+                        <p class="text-secondary">Timely submission of quarterly/semi-annual financial and technical reports.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>6. Final Closeout</h3>
+                        <p class="text-secondary">End-of-project reconciliation, final financial report (FFR) submission, and document archiving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DEEP DIVE SECTION 1: Award Intake -->
+    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <span class="badge bg-primary mb-3">Phase 1: The First 30 Days</span>
+                        <h2 class="display-6 mb-4">The Strategic <br><span class="text-primary">Award Intake</span></h2>
+                        <p class="mb-4">The success of a grant is determined in its first month. We perform a rigorous "compliance mapping" of your award terms to prevent downstream reconciliation errors.</p>
+                        <div class="lifecycle-step-card">
+                            <h6 class="mb-2">Key Output: Compliance Matrix</h6>
+                            <p class="small text-secondary mb-0">A unified document mapping every donor requirement to a specific internal control.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkiZEfW-tdtZ3DA0XijMsj4ldr3HPcEV-1YQ&s" alt="Strategic Award Intake" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DEEP DIVE SECTION 2: Mid-Cycle Rigor -->
+    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="reveal-up">
+                        <span class="badge  mb-3">Phase 2: Continuous Oversight</span>
+                        <h2 class="display-6 mb-4">Mid-Cycle <br><span class="text-accent">Financial Rigor</span></h2>
+                        <p class="mb-4">Avoid the "Year-2 Burnout." We implement continuous reconciliation workflows that ensure your programmatic spending matches your financial forecast month after month.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex gap-3">
+                                <i data-lucide="check-circle" class="text-primary"></i>
+                                <span>Weekly budget vs. actual (BVA) analysis.</span>
+                            </li>
+                            <li class="mb-3 d-flex gap-3">
+                                <i data-lucide="check-circle" class="text-primary"></i>
+                                <span>Real-time sub-awardee monitoring.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="reveal-up">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=100&w=3840" alt="4k Mid-Cycle Rigor" class="img-fluid rounded-4 shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DEEP DIVE SECTION 3: Final Closeout -->
+    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <span class="badge  mb-3">Phase 3: The Final 90 Days</span>
+                        <h2 class="display-6 mb-4">Audit-Ready <br><span class="">Final Closeout</span></h2>
+                        <p class="mb-4">The final reporting cycle is your last chance to ensure compliance. We provide a comprehensive "Audit Shield" service that prepares every folder for external scrutiny.</p>
+                        <div class="p-4  bg-opacity-5 rounded-3 border border-white border-opacity-10">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <i data-lucide="shield-check" class="text-success"></i>
+                                <h6 class="mb-0 ">Zero-Finding Guarantee</h6>
+                            </div>
+                            <p class="small  opacity-75">Our closeout process has maintained a 100% clean-audit record for major USAID and NIH portfolios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8ltT_yqH_E_bFiYuGJEhw6S38Yc2fRp5Wg&s" alt="Audit-Ready Final Closeout" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW DEEP DIVE SECTION 4: Sustainability -->
+    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="reveal-up">
+                        <span class="badge bg-success mb-3">Post-Award Sustainability</span>
+                        <h2 class="display-6 mb-4">Data-Driven <br><span class="text-success">Sustainability</span></h2>
+                        <p class="mb-4">The end of one grant is the beginning of the next. We transform your performance data into powerful impact narratives for your future funding applications.</p>
+                        <a href="contact.html" class="btn btn-primary-premium">Start Your Next Cycle</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="reveal-up">
+                        <img src="https://cdn-ileagip.nitrocdn.com/mVOyRORMADhKMkbfLOXqNpyVZJiBBILT/assets/images/optimized/rev-c460029/blog.manufacturing.hexagon.com/wp-content/uploads/2025/07/AdobeStock_1092510471-scaled-1-1000x437.jpeg" alt="Data-Driven Sustainability" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-padding ">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                                        <div class="d-flex align-items-center mb-4">
+                        <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
+                        <span class="fw-bold fs-4 text-primary">Aidora</span>
+                    </div>
+                    <p class="text-secondary">Enterprise-grade post-award grant management for high-compliance
+                        organizations.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class=""><i data-lucide="linkedin"></i></a>
+                        <a href="#" class=""><i data-lucide="twitter"></i></a>
+                        <a href="#" class=""><i data-lucide="facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-secondary text-decoration-none">Services</a></li>
+                        
+                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="resources.html"
+                                class="text-secondary text-decoration-none">Templates</a></li>
+                        <li class="mb-2"><a href="lifecycle.html" class="text-secondary text-decoration-none">Lifecycle
+                                Guide</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="small text-secondary">Get compliance updates directly in your inbox.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control bg-transparent border-secondary "
+                                placeholder="Email Address">
+                            <button class="btn btn-primary-premium">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <div class="text-center text-secondary small">
+                <p class="mb-0">&copy; 2026 Aidora Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Swiper Initialization
+        new Swiper(".testimonialSwiper", {
+            pagination: { el: ".swiper-pagination", clickable: true },
+            loop: true,
+            autoplay: { delay: 5000 },
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
