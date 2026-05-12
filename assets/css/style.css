@@ -11,7 +11,7 @@
     --bg-secondary: #FFFFFF; 
     --bg-alt: #F8FAFC;
     --text-primary: #000000; /* Pure Black */
-    --text-secondary: #334155;
+    --text-secondary: #1E293B; /* Darker for better contrast */
     --accent: #4F46E5;
     --accent-hover: #4338CA;
     --secondary-accent: #0D9488;
@@ -27,7 +27,7 @@
     --bg-secondary: #111827;
     --bg-alt: #1E293B; /* Darker navy for alternating sections */
     --text-primary: #F9FAFB;
-    --text-secondary: #CBD5E1;
+    --text-secondary: #E2E8F0; /* Lighter for better contrast */
     --accent: #6366F1;
     --accent-hover: #818CF8;
     --border-color: #1E293B;
@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] .predictive-burn-rates h6,
 [data-theme="dark"] .predictive-burn-rates .h4,
 [data-theme="dark"] .predictive-burn-rates .h5 {
-    color: #000000 !important; /* Keep black text in dark mode */
+    color: #FFFFFF !important; /* White text in dark mode */
 }
 
 .predictive-burn-rates .small,
@@ -459,7 +459,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="dark"] .predictive-burn-rates .small,
 [data-theme="dark"] .predictive-burn-rates p {
-    color: #000000 !important; /* Keep black text in dark mode */
+    color: #FFFFFF !important; /* White text in dark mode */
 }
 
 .predictive-burn-rates .badge {
@@ -612,12 +612,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Achievement Cards */
 .achievement-card {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2.5rem 2rem;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: 24px;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
     height: 100%;
@@ -633,11 +635,12 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
     background: var(--bg-alt);
     flex-shrink: 0;
+    margin-bottom: 0.5rem;
 }
 
 .achievement-icon i,
@@ -652,11 +655,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .achievement-number {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     font-family: 'Manrope', sans-serif;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    background: linear-gradient(135deg, var(--accent), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
     line-height: 1;
 }
 
@@ -674,20 +679,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 
-/* Responsive for achievement cards */
+/* Responsive for achievement cards - simplified as it's now centered by default */
 @media (max-width: 768px) {
-    .achievement-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .achievement-icon {
-        margin: 0 auto;
-    }
-    
     .achievement-number {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 }
 

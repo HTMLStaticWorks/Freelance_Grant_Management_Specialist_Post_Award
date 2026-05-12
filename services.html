@@ -225,60 +225,115 @@
     </section>
 
     <!-- NEW SECTION 2: Global Reach (Bento Style) -->
-    <section class="section-padding " style="border-top: 1px solid var(--border-color);">
+    <section class="section-padding overflow-hidden"
+        style="border-top: 1px solid var(--border-color); background: radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.05), transparent);">
         <div class="container">
-            <div class="reveal-up mb-5">
-                <span class="badge bg-success mb-3">Global Scale</span>
-                <h2 class="display-6">Strategic Oversight Across <span class="text-success">5 Continents</span></h2>
+            <div class="reveal-up mb-5 text-center">
+                <span
+                    class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 mb-3 px-3 py-2">Global
+                    Scale</span>
+                <h2 class="display-5 fw-bold text-theme-primary">Strategic Oversight Across <span class="text-success">5
+                        Continents</span></h2>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="p-5  rounded-4 h-100 reveal-up">
-                        <p class="lead mb-4">From field offices in sub-Saharan Africa to research labs in Europe, we
-                            provide 24/7 financial oversight for global operations. Our team handles complex
-                            multi-currency environments with ease.</p>
-                        <div class="d-flex gap-5 mt-5">
-                            <div>
-                                <h2 class="fw-bold text-success mb-0">140+</h2>
-                                <p class="small text-secondary fw-bold">Currencies Managed</p>
-                            </div>
-                            <div>
-                                <h2 class="fw-bold text-success mb-0">30+</h2>
-                                <p class="small text-secondary fw-bold">Countries Supported</p>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Large Feature Card -->
+                <div class="col-lg-7">
+                    <div class="premium-card theme-card h-100 p-5 reveal-up border-0 shadow-2xl position-relative overflow-hidden"
+                        style="background: var(--card-bg); border: 1px solid var(--border-color) !important;">
+                        <!-- Subtle Background Pattern -->
+
+
+                        <div class="position-relative z-1">
+                            <h3 class="display-6 fw-bold mb-4 text-theme-primary">Institutional <span
+                                    class="text-success">Presence</span></h3>
+                            <p class="lead text-theme-primary mb-5" style="max-width: 500px;">From field offices in
+                                sub-Saharan Africa to research labs in Europe, we provide 24/7 financial oversight for
+                                global operations. Our team handles complex multi-currency environments with ease.</p>
+
+                            <div class="row g-4 mt-auto">
+                                <div class="col-sm-6">
+                                    <div class="p-4 rounded-4 bg-success shadow-lg"
+                                        style="background: #10b981 !important;">
+                                        <div class="display-5 fw-bold text-white mb-1">140+</div>
+                                        <div
+                                            class="small fw-bold text-uppercase tracking-wider text-white text-opacity-90">
+                                            Currencies Managed</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-4 rounded-4 bg-primary shadow-lg"
+                                        style="background: #4f46e5 !important;">
+                                        <div class="display-5 fw-bold text-white mb-1">30+</div>
+                                        <div
+                                            class="small fw-bold text-uppercase tracking-wider text-white text-opacity-90">
+                                            Countries Supported</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="p-5 premium-card theme-card rounded-4 h-100 reveal-up" style="transition-delay: 0.1s;">
-                        <h4 class="mb-4">Operational Resilience</h4>
-                        <p class="small opacity-75 mb-4">We maintain disaster recovery protocols for field operations in
-                            high-risk zones, ensuring continuity in reporting no matter the local environment.</p>
 
-                        <ul class="list-unstyled small">
-                            <li class="d-flex align-items-center gap-2 mb-3">
-                                <i data-lucide="check-circle" class="text-success" style="width: 18px;"></i>
-                                <span>24/7 Global Risk Monitoring</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2 mb-3">
-                                <i data-lucide="check-circle" class="text-success" style="width: 18px;"></i>
-                                <span>Redundant Data Sync Nodes</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2">
-                                <i data-lucide="check-circle" class="text-success" style="width: 18px;"></i>
-                                <span>Localized Regulatory Response</span>
-                            </li>
-                        </ul>
+                <!-- Resilience Card -->
+                <div class="col-lg-5">
+                    <div class="premium-card h-100 p-5 reveal-up border-0 shadow-2xl position-relative overflow-hidden d-flex flex-column"
+                        style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(0,0,0,0) 100%), var(--card-bg); border: 1px solid var(--border-color) !important; transition-delay: 0.1s;">
+                        <div class="mb-4 d-flex align-items-center justify-content-between">
+                            <div class="p-3 rounded-3 bg-success bg-opacity-10">
+                                <i data-lucide="shield-alert" class="text-success"
+                                    style="width: 32px; height: 32px;"></i>
+                            </div>
+                            <span
+                                class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 px-3 py-1">Enterprise
+                                Ready</span>
+                        </div>
 
-                        <i data-lucide="shield-check" class="text-success mt-4 d-block"
-                            style="width: 48px; height: 48px; opacity: 0.1;"></i>
+                        <h3 class="fw-bold mb-4 text-theme-primary">Operational <span
+                                class="text-success">Resilience</span></h3>
+                        <p class="text-theme-primary mb-5">We maintain disaster recovery protocols for field operations
+                            in high-risk zones, ensuring continuity in reporting no matter the local environment.</p>
+
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 mb-3"
+                                style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
+                                <div class="flex-shrink-0"><i data-lucide="monitor-dot" class="text-success"
+                                        style="width: 20px;"></i></div>
+                                <div class="small fw-bold text-theme-primary">24/7 Global Risk Monitoring</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 mb-3"
+                                style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
+                                <div class="flex-shrink-0"><i data-lucide="refresh-ccw" class="text-success"
+                                        style="width: 20px;"></i></div>
+                                <div class="small fw-bold text-theme-primary">Redundant Data Sync Nodes</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3"
+                                style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
+                                <div class="flex-shrink-0"><i data-lucide="gavel" class="text-success"
+                                        style="width: 20px;"></i></div>
+                                <div class="small fw-bold text-theme-primary">Localized Regulatory Response</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Immersive Visual -->
                 <div class="col-12">
-                    <div class="reveal-up" style="transition-delay: 0.2s;">
+                    <div class="reveal-up rounded-5 overflow-hidden shadow-2xl position-relative"
+                        style="transition-delay: 0.2s; height: 400px;">
                         <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=100&w=3840"
-                            alt="4k Global Reach" class="img-fluid rounded-4 shadow-2xl w-100"
-                            style="height: 400px; object-fit: cover;">
+                            alt="4k Global Reach" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                        <div class="position-absolute bottom-0 start-0 p-5">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="p-1 rounded-circle bg-success"></div>
+                                <span
+                                    class="small fw-bold text-uppercase tracking-widest text-white text-opacity-75">Live
+                                    Network Status</span>
+                            </div>
+                            <h4 class="text-white fw-bold mb-0">Global Operations Center Online</h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -365,22 +420,26 @@
     <footer class="section-padding ">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="d-flex align-items-center mb-4">
                         <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
                         <span class="fw-bold fs-4 text-primary">Aidora</span>
                     </div>
                     <p class="text-secondary">Enterprise-grade post-award grant management for high-compliance
                         organizations.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <a href="#" class=""><i data-lucide="linkedin"></i></a>
-                        <a href="#" class=""><i data-lucide="twitter"></i></a>
-                        <a href="#" class=""><i data-lucide="facebook"></i></a>
-                        <a href="#" class=""><i data-lucide="instagram"></i></a>
-                        <a href="#" class=""><i data-lucide="youtube"></i></a>
+                    <div class="d-flex gap-3 mt-4 footer-socials">
+                        <a href="#" class="social-icon" title="LinkedIn">
+                            <img src="assets/img/ICON/linkedin-icon.png" alt="LinkedIn" class="social-img">
+                        </a>
+                        <a href="#" class="social-icon" title="Twitter">
+                            <img src="assets/img/ICON/twitter-icon.png" alt="Twitter" class="social-img">
+                        </a>
+                        <a href="#" class="social-icon" title="Instagram">
+                            <img src="assets/img/ICON/instagram-icon.png" alt="Instagram" class="social-img">
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6">
                     <h5 class="mb-4">Company</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About Us</a>
@@ -392,7 +451,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6">
                     <h5 class="mb-4">Resources</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="resources.html"
@@ -404,7 +463,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="mb-4">Newsletter</h5>
                     <p class="small text-secondary">Get compliance updates directly in your inbox.</p>
                     <form class="mt-3">

@@ -99,16 +99,10 @@
 
             <div class="dashboard-content p-4">
                 <div class="row g-4 mb-4">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="premium-card shadow-xl p-4">
                             <h6 class="fw-bold mb-4">Revenue vs. Expenditure</h6>
                             <div id="financialMainChart"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="premium-card shadow-xl p-4">
-                            <h6 class="fw-bold mb-4">Expense Categories</h6>
-                            <div id="expenseDonutChart"></div>
                         </div>
                     </div>
                 </div>
@@ -132,14 +126,6 @@
                 xaxis: { categories: ['Q1', 'Q2', 'Q3', 'Q4', 'Current'] }
             };
             new ApexCharts(document.querySelector("#financialMainChart"), financialOptions).render();
-
-            var expenseOptions = {
-                series: [44, 55, 13, 33],
-                chart: { type: 'donut', height: 300, fontFamily: 'Inter, sans-serif' },
-                labels: ['Salaries', 'Travel', 'Equipment', 'Admin'],
-                colors: ['#6366f1', '#10b981', '#f59e0b', '#ef4444']
-            };
-            new ApexCharts(document.querySelector("#expenseDonutChart"), expenseOptions).render();
         });
     </script>
 </body>
