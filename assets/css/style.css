@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] .predictive-burn-rates h6,
 [data-theme="dark"] .predictive-burn-rates .h4,
 [data-theme="dark"] .predictive-burn-rates .h5 {
-    color: #FFFFFF !important; /* White text in dark mode */
+    color: #000000 !important; /* Keep black text in dark mode for readability on light cards */
 }
 
 .predictive-burn-rates .small,
@@ -459,7 +459,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="dark"] .predictive-burn-rates .small,
 [data-theme="dark"] .predictive-burn-rates p {
-    color: #FFFFFF !important; /* White text in dark mode */
+    color: #000000 !important; /* Keep black text in dark mode for readability on light cards */
 }
 
 .predictive-burn-rates .badge {
@@ -526,7 +526,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Force white text for "Last updated" and "Active" badge in dark mode */
 [data-theme="dark"] .predictive-burn-rates .small.text-secondary:last-child {
-    color: #FFFFFF !important;
+    color: #000000 !important;
 }
 
 [data-theme="dark"] .predictive-burn-rates .badge.bg-success {
