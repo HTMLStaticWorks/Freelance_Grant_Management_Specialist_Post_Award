@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* Home 2 Specific Styles */
         .glass-card {
@@ -18,6 +19,7 @@
             border-radius: 24px;
             transition: transform 0.3s ease;
         }
+
         .glass-card:hover {
             transform: translateY(-5px);
         }
@@ -44,12 +46,12 @@
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="lifecycle.html">Grant Lifecycle</a>
                     </li>
-                    
+
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom fw-bold text-accent"
                             href="dashboard.html">Dashboard</a></li>
                 </ul>
-                                                                                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3">
                     <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
                         <i data-lucide="moon" id="theme-toggle-icon"></i>
                     </button>
@@ -65,23 +67,31 @@
     </nav>
 
     <!-- Futuristic Hero -->
-    <section class="hero-2 section-padding overflow-hidden " style="background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.2), transparent), var(--bg-primary); border-bottom: 1px solid var(--border-color);">
+    <section class="hero-2 section-padding overflow-hidden "
+        style="background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.2), transparent), var(--bg-primary); border-bottom: 1px solid var(--border-color);">
         <div class="container">
             <div class="row g-5 d-flex align-items-stretch">
                 <!-- Visual Column (Left) -->
                 <div class="col-lg-6">
-                    <div class="reveal-up glass-panel h-100 p-0 overflow-hidden rounded-5 border border-white border-opacity-10 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=100&w=3840" alt="Post-Award Intelligence" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 450px;">
+                    <div
+                        class="reveal-up glass-panel h-100 p-0 overflow-hidden rounded-5 border border-white border-opacity-10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=100&w=3840"
+                            alt="Post-Award Intelligence" class="img-fluid h-100 w-100"
+                            style="object-fit: cover; min-height: 450px;">
                     </div>
                 </div>
                 <!-- Text Column (Right) -->
                 <div class="col-lg-6">
-                    <div class="reveal-up glass-panel h-100 p-5 rounded-5 border border-white border-opacity-10 d-flex flex-column justify-content-center" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(20px);">
-                        <h1 class="display-large mb-4 text-white">Post-Award <br>Intelligence <span class="text-primary">Redefined.</span></h1>
-                        <p class="fs-5 text-white text-opacity-75 mb-5">Next-generation grant management automation for the world's most mission-critical organizations.</p>
+                    <div class="reveal-up glass-panel h-100 p-5 rounded-5 border border-white border-opacity-10 d-flex flex-column justify-content-center"
+                        style="background: rgba(0,0,0,0.6); backdrop-filter: blur(20px);">
+                        <h1 class="display-large mb-4 text-white">Post-Award <br>Intelligence <span
+                                class="text-primary">Redefined.</span></h1>
+                        <p class="fs-5 text-white text-opacity-75 mb-5">Next-generation grant management automation for
+                            the world's most mission-critical organizations.</p>
                         <div class="d-flex gap-3 mt-auto">
-                            <a href="dashboard.html" class="btn-premium btn-primary-premium">Launch Platform <i data-lucide="zap"></i></a>
-                            <a href="contact.html" class="btn-premium btn-secondary-premium border-white ">Request Demo</a>
+                            <a href="dashboard.html" class="btn-premium btn-primary-premium">Launch Platform <i
+                                    data-lucide="zap"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -89,40 +99,69 @@
         </div>
     </section>
 
-    <!-- Interactive Features -->
+    <!-- Interactive Features Redesigned -->
     <section class="section-padding">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-3 reveal-up">
-                    <div class="premium-card theme-card  text-center">
-                        <div class="bg-primary-subtle p-3 rounded-4 d-inline-block mb-4"><i data-lucide="shield"
-                                class="text-primary"></i></div>
-                        <h4>Safe-Guard</h4>
-                        <p class="small">Real-time audit protection.</p>
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.1s;">
+                    <div class="service-card-modern safe-guard">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="shield-check" class="text-danger" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge-v2">Safe-Guard</span>
+                            <h4 class="service-title">Real-time Audit Protection</h4>
+                            <p class="service-desc">Continuous compliance monitoring with advanced risk mitigation.</p>
+                            <a href="services.html" class="service-link">Learn More <i data-lucide="arrow-right"
+                                    class="ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 reveal-up" style="transition-delay: 0.1s;">
-                    <div class="premium-card theme-card  text-center">
-                        <div class="bg-success-subtle p-3 rounded-4 d-inline-block mb-4"><i data-lucide="trending-up"
-                                class="text-success"></i></div>
-                        <h4>Yield-Max</h4>
-                        <p class="small">Funding allocation optimization.</p>
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.2s;">
+                    <div class="service-card-modern yield-max">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="trending-up" class="text-success" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge-v2">Yield-Max</span>
+                            <h4 class="service-title">Funding Allocation Optimization</h4>
+                            <p class="service-desc">AI-driven financial modeling for maximum resource efficiency.</p>
+                            <a href="services.html" class="service-link">Learn More <i data-lucide="arrow-right"
+                                    class="ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 reveal-up" style="transition-delay: 0.2s;">
-                    <div class="premium-card theme-card  text-center">
-                        <div class="bg-info-subtle p-3 rounded-4 d-inline-block mb-4"><i data-lucide="globe"
-                                class="text-info"></i></div>
-                        <h4>Multi-Flow</h4>
-                        <p class="small">Global cross-border compliance.</p>
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.3s;">
+                    <div class="service-card-modern multi-flow">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="globe" class="text-info" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge-v2">Multi-Flow</span>
+                            <h4 class="service-title">Global Cross-Border Compliance</h4>
+                            <p class="service-desc">Multi-currency support with international regulatory .</p>
+                            <a href="services.html" class="service-link">Learn More <i data-lucide="arrow-right"
+                                    class="ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 reveal-up" style="transition-delay: 0.3s;">
-                    <div class="premium-card theme-card  text-center">
-                        <div class="bg-warning-subtle p-3 rounded-4 d-inline-block mb-4"><i data-lucide="clock"
-                                class="text-warning"></i></div>
-                        <h4>Deadline-Pro</h4>
-                        <p class="small">Zero-miss reporting system.</p>
+                <div class="col-md-6 col-lg-3 reveal-up" style="transition-delay: 0.4s;">
+                    <div class="service-card-modern deadline-pro">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="clock" class="text-warning" style="width: 32px; height: 32px;"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge-v2">Deadline-Pro</span>
+                            <h4 class="service-title">Zero-Miss Reporting System</h4>
+                            <div class="deadline-pro-status mb-3">
+                                <div class="status-label"><span>Readiness</span><span>98%</span></div>
+                                <div class="status-bar">
+                                    <div class="status-fill"></div>
+                                </div>
+                            </div>
+                            <a href="services.html" class="service-link">Learn More <i data-lucide="arrow-right"
+                                    class="ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,7 +313,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                                        <div class="d-flex align-items-center mb-4">
+                    <div class="d-flex align-items-center mb-4">
                         <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
                         <span class="fw-bold fs-4 text-primary">Aidora</span>
                     </div>
@@ -295,7 +334,7 @@
                         </li>
                         <li class="mb-2"><a href="services.html"
                                 class="text-secondary text-decoration-none">Services</a></li>
-                        
+
                         <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
                         </li>
                     </ul>
@@ -349,9 +388,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
