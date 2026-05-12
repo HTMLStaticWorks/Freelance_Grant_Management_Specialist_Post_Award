@@ -3,148 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliance | Aidora Portal</title>
+    <title>Audit Readiness | Aidora Enterprise</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
 </head>
-<body data-theme="light">
+<body data-theme="light" class="dashboard-body">
 
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
     <div class="dashboard-wrapper">
-        <aside class="sidebar">
-            <div class="mb-5">
-                                <a href="index.html" class="d-flex align-items-center text-decoration-none">
-                    <i data-lucide="shield-check" class="me-2 text-primary" style="width: 28px; height: 28px;"></i>
-                    <span class="fw-bold fs-5 text-primary">Aidora</span>
+        <!-- Sidebar (Standardized) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header mb-4">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <div class="brand-icon-bg me-2">
+                        <i data-lucide="shield-check" class="text-white" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <span class="fw-bold fs-5 brand-text">Aidora</span>
                 </a>
             </div>
-            <nav class="flex-grow-1">
-                <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-                <a href="db-active-grants.html" class="sidebar-link"><i data-lucide="folder-kanban"></i> Active Grants</a>
-                <a href="db-deadlines.html" class="sidebar-link"><i data-lucide="calendar"></i> Deadlines</a>
-                <a href="db-compliance.html" class="sidebar-link active"><i data-lucide="clipboard-check"></i> Compliance</a>
-                <a href="db-financials.html" class="sidebar-link"><i data-lucide="bar-chart-2"></i> Financials</a>
-                <a href="db-documents.html" class="sidebar-link"><i data-lucide="file-text"></i> Documents</a>
-            </nav>
-            <div class="mt-auto pt-4 border-top">
-                <a href="index.html" class="sidebar-link text-danger"><i data-lucide="log-out"></i> Logout</a>
+
+            <div class="sidebar-content flex-grow-1">
+                <div class="sidebar-group mb-4">
+                    <p class="sidebar-group-title">Main Menu</p>
+                    <nav>
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i data-lucide="layout-grid"></i>
+                            <span>Overview</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="sidebar-group mb-4">
+                    <p class="sidebar-group-title">Analytics</p>
+                    <nav>
+                        <a href="db-financials.html" class="sidebar-link">
+                            <i data-lucide="bar-chart-3"></i>
+                            <span>Financial Insights</span>
+                        </a>
+                        <a href="db-compliance.html" class="sidebar-link active">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Audit Readiness</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="sidebar-group">
+                    <p class="sidebar-group-title">Assets</p>
+                    <nav>
+                        <a href="db-documents.html" class="sidebar-link">
+                            <i data-lucide="file-text"></i>
+                            <span>Document Vault</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="sidebar-footer pt-4 border-top">
+                <div class="user-card-sidebar p-3 rounded-4 mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="avatar-circle-sm">SJ</div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <p class="small fw-bold mb-0 text-truncate">Sarah Jenkins</p>
+                            <p class="x-small text-secondary mb-0 text-truncate">Sarah.j@aidora.com</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html" class="sidebar-link logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Log Out</span>
+                </a>
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="dashboard-main">
-                        <header class="topbar">
-                <div>
-                    <h4 class="mb-0">Portfolio Overview</h4>
-                    <p class="small text-secondary mb-0">Monday, 11 May 2026</p>
-                </div>
-                                                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
-                        <i data-lucide="moon" id="theme-toggle-icon"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0"><i data-lucide="bell"></i></button>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-primary" data-bs-toggle="dropdown">
-                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">SJ</div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+            <!-- Sticky Topbar -->
+            <header class="topbar sticky-top glass-effect px-4 py-3 border-bottom">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-icon d-lg-none" id="mobile-nav-toggle">
+                            <i data-lucide="menu"></i>
+                        </button>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Compliance Health Monitor</h5>
+                            <p class="x-small text-secondary mb-0">Audit-ready documentation and scores</p>
+                        </div>
                     </div>
-                </div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="avatar-circle">SJ</div>
                     </div>
                 </div>
             </header>
 
-            <div class="row g-4">
-                <div class="col-lg-7">
-                    <div class="premium-card theme-card  mb-4">
-                        <h5 class="mb-4">Regulatory Monitoring</h5>
-                        <div class="compliance-check  border p-4">
-                            <i data-lucide="check-circle" class="text-success" style="width: 32px; height: 32px;"></i>
-                            <div class="flex-grow-1">
-                                <h6 class="mb-1">Uniform Guidance (2 CFR 200)</h6>
-                                <p class="x-small text-secondary mb-2">Internal controls and procurement standards are 100% aligned with federal standards.</p>
-                                <div class="progress" style="height: 6px;">
-                                    <div class="progress-bar bg-success" style="width: 100%"></div>
-                                </div>
+            <div class="dashboard-content p-4">
+                <div class="premium-card shadow-xl p-4">
+                    <h6 class="fw-bold mb-4">Compliance Score Breakdown</h6>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-4 bg-alt">
+                                <h2 class="fw-bold text-success">98.2%</h2>
+                                <p class="small text-secondary">Overall Health Score</p>
                             </div>
                         </div>
-                        <div class="compliance-check  border p-4">
-                            <i data-lucide="alert-circle" class="text-warning" style="width: 32px; height: 32px;"></i>
-                            <div class="flex-grow-1">
-                                <h6 class="mb-1">Fly America Act</h6>
-                                <p class="x-small text-secondary mb-2">3 pending travel justifications for project #G-9901.</p>
-                                <div class="progress" style="height: 6px;">
-                                    <div class="progress-bar bg-warning" style="width: 82%"></div>
-                                </div>
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-4 bg-alt">
+                                <h2 class="fw-bold text-primary">0 Findings</h2>
+                                <p class="small text-secondary">Open Audit Issues</p>
                             </div>
                         </div>
-                        <div class="compliance-check  border p-4">
-                            <i data-lucide="x-circle" class="text-danger" style="width: 32px; height: 32px;"></i>
-                            <div class="flex-grow-1">
-                                <h6 class="mb-1">Sub-awardee Risk Audit</h6>
-                                <p class="x-small text-secondary mb-2">Grant #G-8822 sub-recipient has not provided latest audit letter.</p>
-                                <div class="progress" style="height: 6px;">
-                                    <div class="progress-bar bg-danger" style="width: 45%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="premium-card theme-card ">
-                        <h5 class="mb-4">Audit Readiness Score</h5>
-                        <div class="text-center py-4">
-                            <h1 class="display-medium text-primary mb-0">94%</h1>
-                            <p class="text-secondary">Low Risk Environment</p>
-                        </div>
-                        <hr>
-                        <ul class="list-unstyled small mt-4">
-                            <li class="d-flex justify-content-between mb-2">
-                                <span>Policy Manuals</span>
-                                <span class="text-success"><i data-lucide="check" class="small"></i> Verified</span>
-                            </li>
-                            <li class="d-flex justify-content-between mb-2">
-                                <span>Conflict of Interest</span>
-                                <span class="text-success"><i data-lucide="check" class="small"></i> Verified</span>
-                            </li>
-                            <li class="d-flex justify-content-between mb-2">
-                                <span>Equipment Ledger</span>
-                                <span class="text-warning"><i data-lucide="refresh-cw" class="small"></i> Updating</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="assets/js/main.js"></script>
+    <script>$(document).ready(function(){ lucide.createIcons(); });</script>
 </body>
 </html>
-
-
-
-
-
-
-

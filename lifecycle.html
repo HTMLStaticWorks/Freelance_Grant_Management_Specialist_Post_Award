@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .timeline { position: relative; padding: 50px 0; }
-        .timeline-line { position: absolute; left: 50%; width: 2px; height: 100%; background: var(--border-color); transform: translateX(-50%); z-index: 1; }
+        .timeline-line { position: absolute; left: 50%; width: 2px; height: 100%; top: 0; background: linear-gradient(to bottom, var(--accent), var(--secondary-accent)); opacity: 0.3; transform: translateX(-50%); z-index: 1; }
         .timeline-item { position: relative; margin-bottom: 80px; z-index: 2; }
         .timeline-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--accent); border-radius: 50%; border: 4px solid var(--bg-primary); }
         .timeline-content { width: 45%; }
@@ -20,13 +20,16 @@
             .timeline-content { width: 80%; margin-left: 60px !important; text-align: left !important; }
         }
     </style>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
 </head>
 <body data-theme="light" class="page-lifecycle">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container-fluid px-lg-5">
-                                                            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
                 <span class="fw-bold fs-4 text-primary">Aidora</span>
             </a>
@@ -35,7 +38,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link nav-link-custom active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="home-2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
@@ -64,6 +67,7 @@
     <section class="section-padding  text-center">
         <div class="container">
             <h1 class="display-medium reveal-up">Mastering the Grant Lifecycle</h1>
+            <div class="mx-auto bg-primary reveal-up mb-4" style="width: 80px; height: 4px; border-radius: 2px;"></div>
             <p class="text-premium reveal-up">From the moment of award notification to the final closeout report, we manage every step with precision.</p>
         </div>
     </section>
@@ -125,7 +129,7 @@
     </section>
 
     <!-- NEW DEEP DIVE SECTION 1: Award Intake -->
-    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="section-padding " style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
@@ -141,7 +145,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="reveal-up">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkiZEfW-tdtZ3DA0XijMsj4ldr3HPcEV-1YQ&s" alt="Strategic Award Intake" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=2070" alt="Strategic Award Intake" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -149,13 +153,13 @@
     </section>
 
     <!-- NEW DEEP DIVE SECTION 2: Mid-Cycle Rigor -->
-    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="section-padding " style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-lg-2">
                     <div class="reveal-up">
-                        <span class="badge  mb-3">Phase 2: Continuous Oversight</span>
-                        <h2 class="display-6 mb-4">Mid-Cycle <br><span class="text-accent">Financial Rigor</span></h2>
+                        <span class="badge bg-info mb-3">Phase 2: Continuous Oversight</span>
+                        <h2 class="display-6 mb-4">Mid-Cycle <br><span class="text-info">Financial Rigor</span></h2>
                         <p class="mb-4">Avoid the "Year-2 Burnout." We implement continuous reconciliation workflows that ensure your programmatic spending matches your financial forecast month after month.</p>
                         <ul class="list-unstyled">
                             <li class="mb-3 d-flex gap-3">
@@ -179,26 +183,26 @@
     </section>
 
     <!-- NEW DEEP DIVE SECTION 3: Final Closeout -->
-    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="section-padding " style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <div class="reveal-up">
-                        <span class="badge  mb-3">Phase 3: The Final 90 Days</span>
-                        <h2 class="display-6 mb-4">Audit-Ready <br><span class="">Final Closeout</span></h2>
+                        <span class="badge bg-warning mb-3">Phase 3: The Final 90 Days</span>
+                        <h2 class="display-6 mb-4">Audit-Ready <br><span class="text-warning">Final Closeout</span></h2>
                         <p class="mb-4">The final reporting cycle is your last chance to ensure compliance. We provide a comprehensive "Audit Shield" service that prepares every folder for external scrutiny.</p>
-                        <div class="p-4  bg-opacity-5 rounded-3 border border-white border-opacity-10">
+                        <div class="p-4 premium-card theme-card border-warning border-opacity-20 shadow-sm">
                             <div class="d-flex align-items-center gap-3 mb-2">
-                                <i data-lucide="shield-check" class="text-success"></i>
-                                <h6 class="mb-0 ">Zero-Finding Guarantee</h6>
+                                <i data-lucide="shield-check" class="text-warning" style="width: 24px; height: 24px;"></i>
+                                <h6 class="mb-0 fw-bold">Zero-Finding Guarantee</h6>
                             </div>
-                            <p class="small  opacity-75">Our closeout process has maintained a 100% clean-audit record for major USAID and NIH portfolios.</p>
+                            <p class="small text-secondary mb-0">Our closeout process has maintained a 100% clean-audit record for major USAID and NIH portfolios.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="reveal-up">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8ltT_yqH_E_bFiYuGJEhw6S38Yc2fRp5Wg&s" alt="Audit-Ready Final Closeout" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2070" alt="Audit-Ready Final Closeout" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -206,7 +210,7 @@
     </section>
 
     <!-- NEW DEEP DIVE SECTION 4: Sustainability -->
-    <section class="section-padding " style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="section-padding " style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-lg-2">
@@ -219,7 +223,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="reveal-up">
-                        <img src="https://cdn-ileagip.nitrocdn.com/mVOyRORMADhKMkbfLOXqNpyVZJiBBILT/assets/images/optimized/rev-c460029/blog.manufacturing.hexagon.com/wp-content/uploads/2025/07/AdobeStock_1092510471-scaled-1-1000x437.jpeg" alt="Data-Driven Sustainability" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" alt="Data-Driven Sustainability" class="img-fluid rounded-4 shadow-2xl w-100" style="min-height: 400px; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -240,6 +244,8 @@
                         <a href="#" class=""><i data-lucide="linkedin"></i></a>
                         <a href="#" class=""><i data-lucide="twitter"></i></a>
                         <a href="#" class=""><i data-lucide="facebook"></i></a>
+                        <a href="#" class=""><i data-lucide="instagram"></i></a>
+                        <a href="#" class=""><i data-lucide="youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2">

@@ -3,115 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deadlines | Aidora Portal</title>
+    <title>Compliance Calendar | Aidora Enterprise</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
 </head>
-<body data-theme="light">
+<body data-theme="light" class="dashboard-body">
 
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
     <div class="dashboard-wrapper">
-        <aside class="sidebar">
-            <div class="mb-5">
-                                <a href="index.html" class="d-flex align-items-center text-decoration-none">
-                    <i data-lucide="shield-check" class="me-2 text-primary" style="width: 28px; height: 28px;"></i>
-                    <span class="fw-bold fs-5 text-primary">Aidora</span>
+        <!-- Sidebar (Standardized) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header mb-4">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <div class="brand-icon-bg me-2">
+                        <i data-lucide="shield-check" class="text-white" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <span class="fw-bold fs-5 brand-text">Aidora</span>
                 </a>
             </div>
-            <nav class="flex-grow-1">
-                <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-                <a href="db-active-grants.html" class="sidebar-link"><i data-lucide="folder-kanban"></i> Active Grants</a>
-                <a href="db-deadlines.html" class="sidebar-link active"><i data-lucide="calendar"></i> Deadlines</a>
-                <a href="db-compliance.html" class="sidebar-link"><i data-lucide="clipboard-check"></i> Compliance</a>
-                <a href="db-financials.html" class="sidebar-link"><i data-lucide="bar-chart-2"></i> Financials</a>
-                <a href="db-documents.html" class="sidebar-link"><i data-lucide="file-text"></i> Documents</a>
-            </nav>
-            <div class="mt-auto pt-4 border-top">
-                <a href="index.html" class="sidebar-link text-danger"><i data-lucide="log-out"></i> Logout</a>
+
+            <div class="sidebar-content flex-grow-1">
+                <div class="sidebar-group mb-4">
+                    <p class="sidebar-group-title">Main Menu</p>
+                    <nav>
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i data-lucide="layout-grid"></i>
+                            <span>Overview</span>
+                        </a>
+                        <a href="db-active-grants.html" class="sidebar-link">
+                            <i data-lucide="folder-kanban"></i>
+                            <span>Active Grants</span>
+                        </a>
+                        <a href="db-deadlines.html" class="sidebar-link active">
+                            <i data-lucide="calendar-clock"></i>
+                            <span>Compliance Calendar</span>
+                        </a>
+                    </nav>
+                </div>
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="dashboard-main">
-                        <header class="topbar">
-                <div>
-                    <h4 class="mb-0">Portfolio Overview</h4>
-                    <p class="small text-secondary mb-0">Monday, 11 May 2026</p>
-                </div>
-                                                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
-                        <i data-lucide="moon" id="theme-toggle-icon"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0"><i data-lucide="bell"></i></button>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-primary" data-bs-toggle="dropdown">
-                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">SJ</div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+            <header class="topbar sticky-top glass-effect px-4 py-3 border-bottom">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-icon d-lg-none" id="mobile-nav-toggle"><i data-lucide="menu"></i></button>
+                        <h5 class="mb-0 fw-bold">Audit & Filing Deadlines</h5>
                     </div>
-                </div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-icon-glass" id="theme-toggle"><i data-lucide="moon" id="theme-toggle-icon"></i></button>
+                        <div class="avatar-circle">SJ</div>
                     </div>
                 </div>
             </header>
 
-            <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="premium-card theme-card ">
-                        <h5 class="mb-4">Submission Calendar</h5>
-                        <div class="deadline-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h6 class="mb-0">Quarterly Progress Report</h6>
-                                <span class="badge bg-danger">In 2 Days</span>
+            <div class="dashboard-content p-4">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card shadow-xl p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h6 class="fw-bold mb-0">May 2026 Schedule</h6>
+                                <div class="btn-group">
+                                    <button class="btn btn-alt btn-xs">Month</button>
+                                    <button class="btn btn-alt btn-xs">Week</button>
+                                </div>
                             </div>
-                            <p class="small text-secondary mb-3">USAID frontiers project #G-9901 requires a full narrative update and impact metrics.</p>
-                            <button class="btn btn-secondary-premium btn-sm">Upload Draft</button>
-                        </div>
-                        <div class="deadline-item" style="border-color: var(--warning);">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h6 class="mb-0">Budget Realignment Request</h6>
-                                <span class="badge bg-warning ">In 5 Days</span>
+                            <!-- Mock Calendar UI -->
+                            <div class="calendar-grid">
+                                <div class="calendar-day-header">Mon</div>
+                                <div class="calendar-day-header">Tue</div>
+                                <div class="calendar-day-header">Wed</div>
+                                <div class="calendar-day-header">Thu</div>
+                                <div class="calendar-day-header">Fri</div>
+                                <div class="calendar-day-header">Sat</div>
+                                <div class="calendar-day-header">Sun</div>
+                                
+                                <!-- Placeholder days -->
+                                <div class="calendar-day muted">27</div>
+                                <div class="calendar-day muted">28</div>
+                                <div class="calendar-day muted">29</div>
+                                <div class="calendar-day muted">30</div>
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">
+                                    4
+                                    <div class="event-pill bg-danger">NIH R01 Filing</div>
+                                </div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day today">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">
+                                    13
+                                    <div class="event-pill bg-warning">USAID Audit</div>
+                                </div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
                             </div>
-                            <p class="small text-secondary mb-3">NIH R01 realignment for Year 2 equipment purchases.</p>
-                            <button class="btn btn-secondary-premium btn-sm">Review Changes</button>
-                        </div>
-                        <div class="deadline-item" style="border-color: var(--success);">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h6 class="mb-0">Annual Closeout Audit</h6>
-                                <span class="badge bg-success">In 12 Days</span>
-                            </div>
-                            <p class="small text-secondary mb-3">Preparation of final reconciliation folders for external audit firm.</p>
-                            <button class="btn btn-secondary-premium btn-sm">Checklist</button>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="premium-card theme-card  bg-primary ">
-                        <h5>Alert Summary</h5>
-                        <div class="mt-4">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="small opacity-75">High Priority</span>
-                                <span class="fw-bold">02</span>
+                    <div class="col-lg-4">
+                        <div class="premium-card shadow-xl p-4">
+                            <h6 class="fw-bold mb-4">Critical Priorities</h6>
+                            <div class="deadline-item-new border-start border-4 border-danger ps-3 mb-4">
+                                <p class="x-small text-danger fw-bold mb-1">DUE IN 2 DAYS</p>
+                                <h6 class="mb-1 small fw-bold">Interim Financial Report</h6>
+                                <p class="x-small text-secondary mb-0">USAID Frontiers - #G-9901</p>
                             </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="small opacity-75">Approaching</span>
-                                <span class="fw-bold">05</span>
+                            <div class="deadline-item-new border-start border-4 border-warning ps-3 mb-4">
+                                <p class="x-small text-warning fw-bold mb-1">DUE IN 5 DAYS</p>
+                                <h6 class="mb-1 small fw-bold">Personnel Effort Cert</h6>
+                                <p class="x-small text-secondary mb-0">NIH Heart Project - #G-8822</p>
                             </div>
                         </div>
                     </div>
@@ -120,16 +135,11 @@
         </main>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="assets/js/main.js"></script>
+    <script>$(document).ready(function(){ lucide.createIcons(); });</script>
 </body>
 </html>
-
-
-
-
-
-
-

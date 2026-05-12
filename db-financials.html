@@ -3,156 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financials | Aidora Portal</title>
+    <title>Financial Insights | Aidora Enterprise</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
-<body data-theme="light">
+<body data-theme="light" class="dashboard-body">
 
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
     <div class="dashboard-wrapper">
-        <aside class="sidebar">
-            <div class="mb-5">
-                                <a href="index.html" class="d-flex align-items-center text-decoration-none">
-                    <i data-lucide="shield-check" class="me-2 text-primary" style="width: 28px; height: 28px;"></i>
-                    <span class="fw-bold fs-5 text-primary">Aidora</span>
+        <!-- Sidebar (Standardized) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header mb-4">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                    <div class="brand-icon-bg me-2">
+                        <i data-lucide="shield-check" class="text-white" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <span class="fw-bold fs-5 brand-text">Aidora</span>
                 </a>
             </div>
-            <nav class="flex-grow-1">
-                <a href="dashboard.html" class="sidebar-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-                <a href="db-active-grants.html" class="sidebar-link"><i data-lucide="folder-kanban"></i> Active Grants</a>
-                <a href="db-deadlines.html" class="sidebar-link"><i data-lucide="calendar"></i> Deadlines</a>
-                <a href="db-compliance.html" class="sidebar-link"><i data-lucide="clipboard-check"></i> Compliance</a>
-                <a href="db-financials.html" class="sidebar-link active"><i data-lucide="bar-chart-2"></i> Financials</a>
-                <a href="db-documents.html" class="sidebar-link"><i data-lucide="file-text"></i> Documents</a>
-            </nav>
-            <div class="mt-auto pt-4 border-top">
-                <a href="index.html" class="sidebar-link text-danger"><i data-lucide="log-out"></i> Logout</a>
+
+            <div class="sidebar-content flex-grow-1">
+                <div class="sidebar-group mb-4">
+                    <p class="sidebar-group-title">Main Menu</p>
+                    <nav>
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i data-lucide="layout-grid"></i>
+                            <span>Overview</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="sidebar-group mb-4">
+                    <p class="sidebar-group-title">Analytics</p>
+                    <nav>
+                        <a href="db-financials.html" class="sidebar-link active">
+                            <i data-lucide="bar-chart-3"></i>
+                            <span>Financial Insights</span>
+                        </a>
+                        <a href="db-compliance.html" class="sidebar-link">
+                            <i data-lucide="clipboard-check"></i>
+                            <span>Audit Readiness</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="sidebar-group">
+                    <p class="sidebar-group-title">Assets</p>
+                    <nav>
+                        <a href="db-documents.html" class="sidebar-link">
+                            <i data-lucide="file-text"></i>
+                            <span>Document Vault</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="sidebar-footer pt-4 border-top">
+                <div class="user-card-sidebar p-3 rounded-4 mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="avatar-circle-sm">SJ</div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <p class="small fw-bold mb-0 text-truncate">Sarah Jenkins</p>
+                            <p class="x-small text-secondary mb-0 text-truncate">Sarah.j@aidora.com</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html" class="sidebar-link logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Log Out</span>
+                </a>
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="dashboard-main">
-                        <header class="topbar">
-                <div>
-                    <h4 class="mb-0">Portfolio Overview</h4>
-                    <p class="small text-secondary mb-0">Monday, 11 May 2026</p>
-                </div>
-                                                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
-                        <i data-lucide="moon" id="theme-toggle-icon"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0"><i data-lucide="bell"></i></button>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-primary" data-bs-toggle="dropdown">
-                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">SJ</div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+            <header class="topbar sticky-top glass-effect px-4 py-3 border-bottom">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-icon d-lg-none" id="mobile-nav-toggle"><i data-lucide="menu"></i></button>
+                        <h5 class="mb-0 fw-bold">Financial Oversight</h5>
                     </div>
-                </div>
-                            <span class="fw-bold small d-none d-md-block">Sarah Jenkins</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                            <li><a class="dropdown-item small" href="#">Profile</a></li>
-                            <li><a class="dropdown-item small" href="#">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item small text-danger" href="login.html">Logout</a></li>
-                        </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="avatar-circle">SJ</div>
                     </div>
                 </div>
             </header>
 
-            <div class="row g-4 mb-4">
-                <div class="col-md-4">
-                    <div class="kpi-card text-center">
-                        <p class="small text-secondary mb-2">Total Expenditures</p>
-                        <h2 class="mb-0 fw-bold">$8.4M</h2>
-                        <span class="text-success small">Under Budget</span>
+            <div class="dashboard-content p-4">
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-8">
+                        <div class="premium-card shadow-xl p-4">
+                            <h6 class="fw-bold mb-4">Revenue vs. Expenditure</h6>
+                            <div id="financialMainChart"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="kpi-card text-center">
-                        <p class="small text-secondary mb-2">Indirect Recovery</p>
-                        <h2 class="mb-0 fw-bold">$1.2M</h2>
-                        <span class="text-primary small">Projected</span>
+                    <div class="col-lg-4">
+                        <div class="premium-card shadow-xl p-4">
+                            <h6 class="fw-bold mb-4">Expense Categories</h6>
+                            <div id="expenseDonutChart"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="kpi-card text-center">
-                        <p class="small text-secondary mb-2">Cost Share Match</p>
-                        <h2 class="mb-0 fw-bold">$450K</h2>
-                        <span class="text-success small">Verified</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="premium-card theme-card ">
-                <h5 class="mb-4">Expenditure by Category</h5>
-                <div class="table-responsive">
-                    <table class="table small">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Budgeted</th>
-                                <th>Expended</th>
-                                <th>Variance</th>
-                                <th>Burn Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Personnel & Salaries</td>
-                                <td>$4,500,000</td>
-                                <td>$2,100,000</td>
-                                <td class="text-success">+$2,400,000</td>
-                                <td>
-                                    <div class="progress" style="height: 4px;"><div class="progress-bar" style="width: 46%"></div></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Travel & Fieldwork</td>
-                                <td>$800,000</td>
-                                <td>$650,000</td>
-                                <td class="text-warning">+$150,000</td>
-                                <td>
-                                    <div class="progress" style="height: 4px;"><div class="progress-bar bg-warning" style="width: 81%"></div></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Capital Equipment</td>
-                                <td>$2,000,000</td>
-                                <td>$1,950,000</td>
-                                <td class="text-danger">+$50,000</td>
-                                <td>
-                                    <div class="progress" style="height: 4px;"><div class="progress-bar bg-danger" style="width: 97%"></div></div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            lucide.createIcons();
+            
+            var financialOptions = {
+                series: [{ name: 'Budget', data: [100, 100, 100, 100, 100] }, { name: 'Spent', data: [20, 35, 55, 70, 85] }],
+                chart: { type: 'bar', height: 350, stacked: false, toolbar: { show: false }, fontFamily: 'Inter, sans-serif' },
+                colors: ['#e2e8f0', '#6366f1'],
+                xaxis: { categories: ['Q1', 'Q2', 'Q3', 'Q4', 'Current'] }
+            };
+            new ApexCharts(document.querySelector("#financialMainChart"), financialOptions).render();
+
+            var expenseOptions = {
+                series: [44, 55, 13, 33],
+                chart: { type: 'donut', height: 300, fontFamily: 'Inter, sans-serif' },
+                labels: ['Salaries', 'Travel', 'Equipment', 'Admin'],
+                colors: ['#6366f1', '#10b981', '#f59e0b', '#ef4444']
+            };
+            new ApexCharts(document.querySelector("#expenseDonutChart"), expenseOptions).render();
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-

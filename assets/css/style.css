@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 .display-large { font-size: 4rem; line-height: 1.1; font-weight: 800; }
 .display-medium { font-size: 3rem; line-height: 1.2; font-weight: 700; }
 .text-premium { line-height: 1.6; font-size: 1.1rem; }
+.text-theme-primary { color: var(--text-primary); }
 
 /* Buttons */
 .btn-premium {
@@ -132,6 +133,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 0;
 }
 
+.navbar-toggler i,
+.navbar-toggler svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
 .nav-link-custom {
     color: #FFFFFF !important; /* Always white in navbar */
     font-weight: 500;
@@ -154,6 +161,51 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link-custom:hover::after {
     width: 100%;
+}
+
+.nav-link-custom.active {
+    color: var(--accent) !important;
+    font-weight: 700;
+}
+
+.nav-link-custom.active::after {
+    width: 100%;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-5px);
 }
 
 /* RTL Support */
@@ -247,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ABOUT PAGE: Institutional & Story-Driven */
 .page-about {
-    --accent: var(--secondary-accent); /* Deep Teal for About */
+    /* Institutional & Story-Driven branding removed accent override to match global navbar */
 }
 .page-about h2 {
     font-family: 'Poppins', sans-serif; /* Different heading font for About */
@@ -311,4 +363,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 .page-lifecycle .timeline-dot {
     border-color: var(--bg-primary);
+}
+
+/* Global Accordion Fixes */
+.accordion-button {
+    color: var(--text-primary) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 1.5rem 1.25rem;
+}
+.accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(0);
+}
+[data-theme="dark"] .accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(1);
+}
+.accordion-button:not(.collapsed) {
+    color: var(--accent) !important;
+}
+.accordion-item {
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+}
+.accordion-body {
+    color: var(--text-secondary);
+    padding-top: 0;
+    padding-bottom: 1.5rem;
 }

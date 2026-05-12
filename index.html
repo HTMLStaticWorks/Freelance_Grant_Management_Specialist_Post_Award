@@ -19,7 +19,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/safe-ok.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body data-theme="light">
@@ -27,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container-fluid px-lg-5">
-                                                            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
                 <span class="fw-bold fs-4 text-primary">Aidora</span>
             </a>
@@ -36,18 +36,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link nav-link-custom active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="home-2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="lifecycle.html">Grant Lifecycle</a>
                     </li>
-                    
+
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom fw-bold text-accent"
                             href="dashboard.html">Dashboard</a></li>
                 </ul>
-                                                                                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3">
                     <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
                         <i data-lucide="moon" id="theme-toggle-icon"></i>
                     </button>
@@ -130,7 +130,8 @@
                         <img src="assets/img/service_compliance.png" alt="Compliance Tracking">
                         <div class="card-content">
                             <h3>Compliance Tracking</h3>
-                            <p>End-to-end monitoring of grant stipulations and regulatory requirements tos.</p>
+                            <p>End-to-end monitoring of grant stipulations and regulatory requirements , stipulations
+                                tos.</p>
                             <a href="services.html"
                                 class="text-primary fw-semibold text-decoration-none d-flex align-items-center mt-3">Learn
                                 More <i data-lucide="chevron-right" class="ms-1" style="width: 16px;"></i></a>
@@ -142,7 +143,8 @@
                         <img src="assets/img/service_reporting.png" alt="Financial Reporting">
                         <div class="card-content">
                             <h3>Financial Reporting</h3>
-                            <p>Automated reconciliation and real-time budget variance analysis for multi-currency grants.
+                            <p>Automated reconciliation and real-time budget variance analysis for multi-currency
+                                grants.
                             </p>
                             <a href="services.html"
                                 class="text-primary fw-semibold text-decoration-none d-flex align-items-center mt-3">Learn
@@ -224,23 +226,33 @@
                 <div class="col-lg-6">
                     <div class="reveal-up">
                         <span class="badge bg-primary mb-3">Live Intelligence</span>
-                        <h2 class="display-6 mb-4">Real-Time Compliance <br><span class="text-primary">3D Monitoring</span></h2>
-                        <p class="mb-4">Our proprietary monitoring engine provides a multidimensional view of your grant health, flagging risks before they become liabilities.</p>
-                        <div class="premium-card theme-card  p-4 border-0 shadow-sm">
-                                                            <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-primary p-0" id="theme-toggle" title="Toggle Theme">
-                        <i data-lucide="moon" id="theme-toggle-icon"></i>
-                    </button>
-                    <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
-                        <i data-lucide="user"></i>
-                    </a>
-                </div>
-                                <div>
-                                    <h6 class="mb-0">Instant Risk Scoring</h6>
-                                    <p class="small  opacity-75 mb-0">Automated audit-risk assessment across all fund lines.</p>
+                        <h2 class="display-6 mb-4">Real-Time Compliance <br><span class="text-primary">3D
+                                Monitoring</span></h2>
+                        <p class="mb-4">Our proprietary monitoring engine provides a multidimensional view of your grant
+                            health, flagging risks before they become liabilities.</p>
+                        <div class="row g-4 mt-2">
+                            <div class="col-md-6">
+                                <div class="premium-card theme-card p-4 border-0 shadow-sm h-100">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="p-2 bg-primary-subtle rounded-3"><i data-lucide="shield-alert" class="text-primary"></i></div>
+                                        <h6 class="mb-0 fw-bold">Instant Risk Scoring</h6>
+                                    </div>
+                                    <p class="small opacity-75 mb-0">Automated audit-risk assessment across all fund lines, updated in real-time.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="premium-card theme-card p-4 border-0 shadow-sm h-100">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="p-2 bg-success-subtle rounded-3"><i data-lucide="history" class="text-success"></i></div>
+                                        <h6 class="mb-0 fw-bold">Audit Trail History</h6>
+                                    </div>
+                                    <p class="small opacity-75 mb-0">Immutable logs for every financial transaction and programmatic update.</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="p-4 border-start border-primary border-4 bg-primary-subtle rounded-end-4">
+                                    <h6 class="fw-bold mb-2">Predictive Burn Rates</h6>
+                                    <p class="small mb-0">AI-driven forecasting identifies potential over-spending 60 days before it occurs.</p>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +261,8 @@
                 <div class="col-lg-6">
                     <div class="perspective-container">
                         <div class="premium-3d-card reveal-up floating-anim">
-                            <img src="assets/img/dashboard_3d.png" alt="3D Compliance Dashboard" class="img-fluid rounded-4 shadow-lg">
+                            <img src="assets/img/dashboard_3d.png" alt="3D Compliance Dashboard"
+                                class="img-fluid rounded-4 shadow-lg">
                         </div>
                     </div>
                 </div>
@@ -264,8 +277,11 @@
                 <div class="col-lg-6 order-lg-2">
                     <div class="reveal-up">
                         <span class="badge bg-success mb-3">Global Reach</span>
-                        <h2 class="display-6 mb-4">Driving Transparency <br><span class="text-success">Worldwide</span></h2>
-                        <p class="mb-4">Effective grant management isn't just about spreadsheets; it's about the impact you deliver. We ensure your funding reaches its intended destination with 100% transparency.</p>
+                        <h2 class="display-6 mb-4">Driving Transparency <br><span class="text-success">Worldwide</span>
+                        </h2>
+                        <p class="mb-4">Effective grant management isn't just about spreadsheets; it's about the impact
+                            you deliver. We ensure your funding reaches its intended destination with 100% transparency.
+                        </p>
                         <ul class="list-unstyled">
                             <li class="mb-3 d-flex align-items-center gap-2">
                                 <i data-lucide="globe" class="text-success"></i>
@@ -281,7 +297,61 @@
                 <div class="col-lg-6 order-lg-1">
                     <div class="perspective-container">
                         <div class="premium-3d-card reveal-up">
-                            <img src="assets/img/impact_3d.png" alt="3D Global Impact" class="img-fluid rounded-4 shadow-lg">
+                            <img src="assets/img/impact_3d.png" alt="3D Global Impact"
+                                class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section-padding ">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <div class="d-flex gap-2 mb-3">
+                            <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-10">Innovation</span>
+                            <span class="badge bg-secondary-subtle text-secondary border border-secondary border-opacity-10">Institutional</span>
+                        </div>
+                        <h2 class="display-6 mb-4">Enterprise <span class="text-primary">Tech Stack</span></h2>
+                        <p class="mb-5 lead">We leverage industry-leading ERP integrations and custom-built analytics dashboards to provide real-time visibility into your grant health.</p>
+                        
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-2 bg-primary-subtle rounded-3"><i data-lucide="refresh-cw" class="text-primary"></i></div>
+                                    <span class="fw-bold">ERP Sync</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-2 bg-info-subtle rounded-3"><i data-lucide="bar-chart-3" class="text-info"></i></div>
+                                    <span class="fw-bold">BI Dashboards</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-2 bg-success-subtle rounded-3"><i data-lucide="link" class="text-success"></i></div>
+                                    <span class="fw-bold">API Connect</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-2 bg-warning-subtle rounded-3"><i data-lucide="lock" class="text-warning"></i></div>
+                                    <span class="fw-bold">Secure Vault</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="reveal-up">
+                        <div class="premium-card theme-card p-2 rounded-5 overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" 
+                                 alt="Tech Stack Analytics" class="img-fluid rounded-4">
                         </div>
                     </div>
                 </div>
@@ -316,50 +386,44 @@
     <footer class="section-padding ">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4">
-                                        <div class="d-flex align-items-center mb-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-4">
                         <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
                         <span class="fw-bold fs-4 text-primary">Aidora</span>
                     </div>
                     <p class="text-secondary">Enterprise-grade post-award grant management for high-compliance
                         organizations.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <a href="#" class=""><i data-lucide="linkedin"></i></a>
-                        <a href="#" class=""><i data-lucide="twitter"></i></a>
-                        <a href="#" class=""><i data-lucide="facebook"></i></a>
+                    <div class="d-flex gap-3 mt-4 footer-socials">
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-4">Company</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About Us</a>
-                        </li>
-                        <li class="mb-2"><a href="services.html"
-                                class="text-secondary text-decoration-none">Services</a></li>
-                        
-                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
-                        </li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-secondary text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-4">Resources</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="resources.html"
-                                class="text-secondary text-decoration-none">Templates</a></li>
-                        <li class="mb-2"><a href="lifecycle.html" class="text-secondary text-decoration-none">Lifecycle
-                                Guide</a></li>
+                        <li class="mb-2"><a href="resources.html" class="text-secondary text-decoration-none">Templates</a></li>
+                        <li class="mb-2"><a href="lifecycle.html" class="text-secondary text-decoration-none">Lifecycle Guide</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
-                        </li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-4">Newsletter</h5>
                     <p class="small text-secondary">Get compliance updates directly in your inbox.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control bg-transparent border-secondary "
-                                placeholder="Email Address">
+                            <input type="email" class="form-control bg-transparent border-secondary" placeholder="Email Address">
                             <button class="btn btn-primary-premium">Join</button>
                         </div>
                     </form>
@@ -390,9 +454,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
