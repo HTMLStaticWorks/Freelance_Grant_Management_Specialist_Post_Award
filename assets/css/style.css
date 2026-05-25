@@ -1,5 +1,5 @@
 /* 
-    GrantPro - Enterprise Post-Award Grant Management
+    GrantFlow - Freelance Post-Award Grant Management
     Core Design System
 */
 
@@ -144,10 +144,23 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 0;
 }
 
+.navbar-toggler {
+    border: none !important;
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
 .navbar-toggler i,
 .navbar-toggler svg {
     color: #FFFFFF !important;
     stroke: #FFFFFF !important;
+    width: 28px;
+    height: 28px;
 }
 
 .nav-link-custom {
@@ -188,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile Navbar Overlay (Prevents content push) */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar-collapse {
         position: absolute;
         top: 100%;
@@ -460,108 +473,177 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1.5rem;
 }
 
-/* Predictive Burn Rates Section */
-.predictive-burn-rates {
+/* --- PREMIUM WIDGETS REDESIGN: Real-Time Compliance Monitoring --- */
+
+/* Risk Pulse Indicator */
+.risk-pulse {
+    position: relative;
+    display: inline-flex;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10B981;
+}
+
+.risk-pulse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #10B981;
+    animation: pulse-ring 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.33); opacity: 1; }
+    80%, 100% { transform: scale(3); opacity: 0; }
+}
+
+/* Compliance Card Customization */
+.compliance-widget-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    padding: 1.75rem !important;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.compliance-widget-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent) !important;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.1);
+}
+
+.compliance-widget-card p {
+    color: var(--text-secondary);
+}
+
+/* Audit logs preview list */
+.audit-logs-preview {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.audit-log-item {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid var(--border-color);
+}
+
+.audit-log-item.success {
+    border-left-color: #10B981;
+}
+
+.audit-log-item .log-desc {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.audit-log-item .log-time {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Premium Burn Rate Card */
+.burn-rate-dashboard {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.04) 0%, rgba(13, 148, 136, 0.04) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    transition: var(--transition);
+    position: relative;
+}
+
+[data-theme="dark"] .burn-rate-dashboard {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(13, 148, 136, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.burn-rate-dashboard:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .burn-rate-dashboard:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.burn-rate-dashboard h5 {
+    color: var(--text-primary) !important;
+}
+
+/* Metric Cards inside Burn Rate Dashboard */
+.metric-card-premium {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.metric-card-premium:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--card-shadow);
+}
+
+.metric-card-premium .h4 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.metric-card-premium.success { border-top: 3px solid #10B981; }
+.metric-card-premium.warning { border-top: 3px solid #F59E0B; }
+.metric-card-premium.danger { border-top: 3px solid #EF4444; }
+
+/* Specialist Insight Card Premium */
+.insight-card-premium {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    border-radius: 16px;
+    padding: 1.25rem;
     transition: var(--transition);
 }
 
-.predictive-burn-rates h6,
-.predictive-burn-rates .h4,
-.predictive-burn-rates .h5 {
-    color: #000000 !important; /* Force black text */
+[data-theme="dark"] .insight-card-premium {
+    background: rgba(18, 18, 18, 0.6);
+    border-color: rgba(99, 102, 241, 0.2);
 }
 
-[data-theme="dark"] .predictive-burn-rates h6,
-[data-theme="dark"] .predictive-burn-rates .h4,
-[data-theme="dark"] .predictive-burn-rates .h5 {
-    color: #000000 !important; /* Keep black text in dark mode for readability on light cards */
+.insight-card-premium:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--accent);
 }
 
-.predictive-burn-rates .small,
-.predictive-burn-rates p {
-    color: #000000 !important; /* Force black text for descriptions */
+[data-theme="dark"] .insight-card-premium:hover {
+    background: rgba(18, 18, 18, 0.85);
+    border-color: var(--accent);
 }
 
-[data-theme="dark"] .predictive-burn-rates .small,
-[data-theme="dark"] .predictive-burn-rates p {
-    color: #000000 !important; /* Keep black text in dark mode for readability on light cards */
+.animate-pulse-slow {
+    animation: pulse-slow 3s infinite ease-in-out;
 }
 
-.predictive-burn-rates .badge {
-    font-weight: 600;
-}
-
-.predictive-burn-rates .bg-white {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-[data-theme="dark"] .predictive-burn-rates .bg-white {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-}
-
-.predictive-burn-rates .text-primary {
-    color: #4F46E5 !important;
-}
-
-.predictive-burn-rates .text-success {
-    color: #059669 !important;
-}
-
-.predictive-burn-rates .text-warning {
-    color: #D97706 !important;
-}
-
-.predictive-burn-rates .text-danger {
-    color: #DC2626 !important;
-}
-
-.predictive-burn-rates .text-secondary {
-    color: #6B7280 !important;
-}
-
-.predictive-burn-rates .btn-primary {
-    background-color: #4F46E5 !important;
-    border-color: #4F46E5 !important;
-    color: white !important;
-}
-
-.predictive-burn-rates .btn-outline-primary {
-    border-color: #4F46E5 !important;
-    color: #4F46E5 !important;
-}
-
-.predictive-burn-rates .btn-outline-primary:hover {
-    background-color: #4F46E5 !important;
-    color: white !important;
-}
-
-/* Enhanced dark mode for predictive burn rates */
-[data-theme="dark"] .predictive-burn-rates {
-    background-color: rgba(79, 70, 229, 0.1) !important;
-    border-color: #4F46E5 !important;
-}
-
-[data-theme="dark"] .predictive-burn-rates .bg-white.bg-opacity-50 {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-[data-theme="dark"] .predictive-burn-rates .bg-white.bg-opacity-25 {
-    background-color: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* Force white text for "Last updated" and "Active" badge in dark mode */
-[data-theme="dark"] .predictive-burn-rates .small.text-secondary:last-child {
-    color: #000000 !important;
-}
-
-[data-theme="dark"] .predictive-burn-rates .badge.bg-success {
-    color: #FFFFFF !important;
-    background-color: #059669 !important;
-}
-
-/* Additional override for all badges in predictive burn rates dark mode */
-[data-theme="dark"] .predictive-burn-rates .badge {
-    color: #FFFFFF !important;
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.95); }
 }
 
 /* Footer Social Icons */
@@ -842,6 +924,38 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     position: relative;
     overflow: hidden;
+}
+
+[data-theme="light"] .oversight-card-modern {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .feature-modern {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .feature-modern:hover {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: var(--accent) !important;
+}
+
+[data-theme="light"] .oversight-card-modern:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 0 50px rgba(99, 102, 241, 0.08) !important;
+    border-color: var(--accent) !important;
+}
+
+[data-theme="light"] .oversight-card-modern .card-modern-title,
+[data-theme="light"] .oversight-card-modern .feature-title {
+    color: #000000 !important;
+}
+
+[data-theme="light"] .oversight-card-modern p,
+[data-theme="light"] .oversight-card-modern .card-modern-subtitle,
+[data-theme="light"] .oversight-card-modern .feature-desc {
+    color: #1E293B !important;
 }
 
 .oversight-card-modern::before {

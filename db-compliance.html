@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit Readiness | Aidora Grant Specialist</title>
+    <title>Audit Readiness | GrantFlow Grant Specialist</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS Dependencies -->
@@ -23,9 +23,9 @@
             <div class="sidebar-header mb-4">
                 <a href="index.html" class="d-flex align-items-center text-decoration-none">
                     <div class="brand-icon-bg me-2">
-                        <i data-lucide="shield-check" class="text-white" style="width: 24px; height: 24px;"></i>
+                        <i data-lucide="award" class="text-white" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <span class="fw-bold fs-5 brand-text">Aidora</span>
+                    <span class="fw-bold fs-5 brand-text">GrantFlow</span>
                 </a>
             </div>
 
@@ -65,13 +65,13 @@
                 </div>
             </div>
 
-            <div class="sidebar-footer pt-4 border-top d-lg-none">
-                <div class="user-card-sidebar p-3 rounded-4 mb-3">
+            <div class="sidebar-footer pt-4 border-top">
+                <div class="user-card-sidebar p-3 rounded-4 mb-3 d-lg-none">
                     <div class="d-flex align-items-center gap-3">
                         <div class="avatar-circle-sm">SJ</div>
                         <div class="flex-grow-1 overflow-hidden">
                             <p class="small fw-bold mb-0 text-truncate">Sarah Jenkins</p>
-                            <p class="x-small text-secondary mb-0 text-truncate">Sarah.j@aidora.com</p>
+                            <p class="x-small text-secondary mb-0 text-truncate">Sarah.j@grantflow.com</p>
                         </div>
                     </div>
                 </div>
@@ -93,12 +93,19 @@
                         </button>
                         <div>
                             <h5 class="mb-0 fw-bold">Compliance Health Monitor</h5>
-                            <p class="x-small text-secondary mb-0">Audit-ready documentation and scores</p>
+
                         </div>
                     </div>
 
                     <div class="d-flex align-items-center gap-3">
-                        <div class="avatar-circle d-lg-none">SJ</div>
+                        <!-- Theme & RTL -->
+                        <button class="btn btn-icon position-relative" id="theme-toggle" title="Toggle Theme">
+                            <i data-lucide="moon" id="theme-toggle-icon"></i>
+                        </button>
+                        <button class="btn btn-icon position-relative" id="rtl-toggle" title="Toggle RTL">
+                            <i data-lucide="align-right"></i>
+                        </button>
+
                         <div class="d-none d-lg-block">
                             <div class="dropdown">
                                 <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">

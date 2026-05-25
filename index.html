@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aidora | Freelance Grant Management & Fundraising Specialist</title>
+    <title>GrantFlow | Freelance Grant Management & Fundraising Specialist</title>
     <meta name="description"
         content="Dedicated freelance grant management and fundraising assistance for nonprofits, charities, and community organizations. Expert prospect research, proposal development, and compliance.">
 
@@ -25,11 +25,11 @@
 <body data-theme="light">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <nav class="navbar navbar-expand-xl navbar-custom sticky-top">
         <div class="container-fluid px-lg-5">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
-                <span class="fw-bold fs-4 text-primary">Aidora</span>
+                <i data-lucide="award" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
+                <span class="fw-bold fs-4 text-primary">GrantFlow</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i data-lucide="menu"></i>
@@ -54,7 +54,7 @@
                     <button class="btn btn-link text-primary p-0" id="rtl-toggle" title="Toggle RTL">
                         <i class="fas fa-align-right"></i>
                     </button>
-                    <a href="login.html" class="btn btn-link text-primary p-0" title="Login">
+                    <a href="login.html" class="btn btn-link text-primary p-0 d-none d-lg-block" title="Login">
                         <i data-lucide="user"></i>
                     </a>
                 </div>
@@ -225,9 +225,6 @@
                             <img src="assets/img/yield_max_growth.png" alt="Yield-Max Optimization"
                                 class="img-fluid rounded-3 shadow-sm">
                         </div>
-                        <div class="p-3 bg-success-subtle rounded-3 d-inline-block mb-3">
-                            <i data-lucide="search" class="text-success" style="width: 24px; height: 24px;"></i>
-                        </div>
                         <div class="service-content">
                             <span class="service-badge-v2">Fundraising Strategy</span>
                             <h4 class="service-title">Prospect Research</h4>
@@ -352,83 +349,151 @@
                         <p class="mb-4">I actively monitor your grant health, analyzing expenses and deadlines to flag risks before they become liabilities.</p>
                         <div class="row g-4 mt-2">
                             <div class="col-md-6">
-                                <div class="premium-card theme-card p-4 border-0 shadow-sm h-100">
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        <div class="p-2 bg-primary-subtle rounded-3"><i data-lucide="shield-alert"
-                                                class="text-primary"></i></div>
-                                        <h6 class="mb-0 fw-bold">Instant Risk Scoring</h6>
+                                <div class="premium-card compliance-widget-card p-4 border-0 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="p-2.5 bg-primary-subtle rounded-4 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
+                                                <i data-lucide="shield-alert" class="text-primary" style="width: 22px; height: 22px;"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">Instant Risk Scoring</h6>
+                                                <span class="x-small text-success d-flex align-items-center gap-1 mt-0.5">
+                                                    <span class="risk-pulse"></span> Real-time active
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-success-subtle text-success border border-success border-opacity-10 py-1 px-2 rounded-pill" style="font-size: 0.7rem;">98% Secure</span>
                                     </div>
-                                    <p class="small opacity-75 mb-0">Automated audit-risk assessment across all fund
-                                        lines, updated in real-time.</p>
+                                    <p class="small opacity-75 mb-3">Automated audit-risk assessment across all fund lines, updated in real-time.</p>
+                                    <!-- Premium visual risk bar -->
+                                    <div class="risk-meter-bar mt-2">
+                                        <div class="d-flex justify-content-between x-small text-secondary mb-1">
+                                            <span>Audit Risk Level</span>
+                                            <span class="fw-bold text-success">Low (2%)</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px; background-color: var(--border-color);">
+                                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 2%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="premium-card theme-card p-4 border-0 shadow-sm h-100">
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        <div class="p-2 bg-success-subtle rounded-3"><i data-lucide="history"
-                                                class="text-success"></i></div>
-                                        <h6 class="mb-0 fw-bold">Audit Trail History</h6>
+                                <div class="premium-card compliance-widget-card p-4 border-0 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="p-2.5 bg-success-subtle rounded-4 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
+                                                <i data-lucide="history" class="text-success" style="width: 22px; height: 22px;"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">Audit Trail History</h6>
+                                                <span class="x-small text-secondary mt-0.5 d-block">Ledger: Immutable</span>
+                                            </div>
+                                        </div>
+                                        <i data-lucide="lock" class="text-success" style="width: 16px; height: 16px;" title="Cryptographically Verified"></i>
                                     </div>
-                                    <p class="small opacity-75 mb-0">Immutable logs for every financial transaction and
-                                        programmatic update.</p>
+                                    <p class="small opacity-75 mb-2">Immutable logs for every financial transaction and programmatic update.</p>
+                                    <!-- A small list of recent immutable logs -->
+                                    <div class="audit-logs-preview">
+                                        <div class="audit-log-item success">
+                                            <span class="log-desc text-truncate me-2" style="font-size: 0.72rem;"><i data-lucide="check" class="text-success me-1" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i>NIH Q1 Report Sealed</span>
+                                            <span class="log-time text-secondary shrink-0">10m ago</span>
+                                        </div>
+                                        <div class="audit-log-item success">
+                                            <span class="log-desc text-truncate me-2" style="font-size: 0.72rem;"><i data-lucide="check" class="text-success me-1" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i>NSF Expense Audited</span>
+                                            <span class="log-time text-secondary shrink-0">2h ago</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div
-                                    class="p-4 border-start border-primary border-4 bg-primary-subtle rounded-end-4 predictive-burn-rates">
-                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="burn-rate-dashboard predictive-burn-rates p-4 rounded-4 shadow-sm border border-secondary border-opacity-10 position-relative overflow-hidden">
+                                    <!-- Subtle background icon glow decoration -->
+                                    <div class="position-absolute top-0 end-0 p-5 opacity-10 text-primary d-none d-lg-block" style="pointer-events: none; transform: translate(20px, -20px);">
+                                        <i data-lucide="trending-down" style="width: 160px; height: 160px;"></i>
+                                    </div>
+                                    
+                                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4 border-bottom border-secondary border-opacity-10 pb-3">
                                         <div>
-
+                                            <h5 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                                                <i data-lucide="activity" class="text-primary animate-pulse-slow" style="width: 20px; height: 20px;"></i>
+                                                Predictive Compliance & Runway
+                                            </h5>
+                                            <p class="small text-secondary mb-0">Continuous post-award forecasting identifying runway risks 60 days in advance.</p>
                                         </div>
-                                        <div class="text-end">
-                                            <div class="badge bg-success mb-1">Active</div>
-
+                                        <div class="text-sm-end shrink-0">
+                                            <span class="badge bg-success-subtle text-success border border-success border-opacity-15 px-3 py-1.5 rounded-pill mb-1 d-inline-flex align-items-center gap-1.5 fw-semibold">
+                                                <span class="risk-pulse"></span> Active Forecast
+                                            </span>
                                         </div>
                                     </div>
 
                                     <!-- Burn Rate Metrics -->
                                     <div class="row g-3 mt-2">
                                         <div class="col-md-4">
-                                            <div class="text-center p-3 bg-white bg-opacity-50 rounded-3">
-                                                <div class="h4 mb-1 text-primary">$45.2K</div>
-                                                <div class="small text-secondary">Current Monthly Burn</div>
-                                                <div class="small text-success mt-1">↓ 12% vs target</div>
+                                            <div class="metric-card-premium success h-100">
+                                                <div class="metric-icon-small bg-success-subtle text-success mb-2 mx-auto" style="width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                    <i data-lucide="trending-down" style="width: 18px; height: 18px;"></i>
+                                                </div>
+                                                <div class="h4 mb-1 text-primary fw-extrabold">$45.2K</div>
+                                                <div class="small text-secondary fw-semibold">Current Monthly Burn</div>
+                                                <div class="small text-success mt-2 d-inline-flex align-items-center gap-1 fw-bold">
+                                                    <i data-lucide="arrow-down" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i> ↓ 12% vs target
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="text-center p-3 bg-white bg-opacity-50 rounded-3">
-                                                <div class="h4 mb-1 text-warning">62 days</div>
-                                                <div class="small text-secondary">Runway Remaining</div>
-                                                <div class="small text-warning mt-1">⚠️ Below threshold</div>
+                                            <div class="metric-card-premium warning h-100">
+                                                <div class="metric-icon-small bg-warning-subtle text-warning mb-2 mx-auto" style="width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                    <i data-lucide="alert-triangle" style="width: 18px; height: 18px;"></i>
+                                                </div>
+                                                <div class="h4 mb-1 text-warning fw-extrabold">62 days</div>
+                                                <div class="small text-secondary fw-semibold">Runway Remaining</div>
+                                                <div class="small text-warning mt-2 d-inline-flex align-items-center gap-1 fw-bold">
+                                                    <span>⚠️ Below threshold</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="text-center p-3 bg-white bg-opacity-50 rounded-3">
-                                                <div class="h4 mb-1 text-danger">$8.7K</div>
-                                                <div class="small text-secondary">Projected Over-spend</div>
-                                                <div class="small text-danger mt-1">In 60 days</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- AI Insights -->
-                                    <div class="mt-3 p-3 bg-white bg-opacity-25 rounded-3">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <i data-lucide="user-check" class="text-primary flex-shrink-0"
-                                                style="width: 20px; height: 20px;"></i>
-                                            <div>
-                                                <div class="small fw-bold mb-1">Specialist Insight</div>
-                                                <div class="small mb-0">Reallocate Q4 personnel costs or secure
-                                                    additional funding within 45 days to maintain compliance runway.
+                                            <div class="metric-card-premium danger h-100">
+                                                <div class="metric-icon-small bg-danger-subtle text-danger mb-2 mx-auto" style="width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                                    <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
+                                                </div>
+                                                <div class="h4 mb-1 text-danger fw-extrabold">$8.7K</div>
+                                                <div class="small text-secondary fw-semibold">Projected Over-spend</div>
+                                                <div class="small text-danger mt-2 d-inline-flex align-items-center gap-1 fw-bold">
+                                                    <span>In 60 days</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Action Buttons -->
-                                    <div class="d-flex gap-2 mt-3">
-                                        <button class="btn btn-sm btn-primary">View Full Forecast</button>
-                                        <button class="btn btn-sm btn-outline-primary">Download Report</button>
+                                    <!-- AI Insights / Specialist Insight -->
+                                    <div class="insight-card-premium mt-4">
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="avatar-specialist flex-shrink-0">
+                                                <div class="avatar-circle-ins border border-2 border-primary border-opacity-20 d-flex align-items-center justify-content-center bg-primary text-white fw-bold" style="width: 42px; height: 42px; border-radius: 50%; font-size: 0.9rem;">
+                                                    GF
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <span class="small fw-bold text-theme-primary" style="font-size: 0.85rem;">Specialist Insight</span>
+                                                    <span class="badge bg-primary-subtle text-primary border border-primary border-opacity-10 x-small rounded-pill" style="font-size: 0.65rem;">Priority Advice</span>
+                                                </div>
+                                                <p class="small text-secondary mb-0 leading-relaxed italic" style="font-size: 0.8rem;">
+                                                    "Reallocate Q4 personnel costs or secure additional funding within 45 days to maintain compliance runway."
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons & Last Updated Info -->
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-4 pt-2">
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-primary">View Full Forecast</button>
+                                            <button class="btn btn-sm btn-outline-primary">Download Report</button>
+                                        </div>
+                                        <div class="small text-secondary">Last updated: 2 mins ago</div>
                                     </div>
                                 </div>
                             </div>
@@ -597,7 +662,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card theme-card text-center py-5 px-4">
                             <i data-lucide="quote" class="text-primary opacity-25 mb-3" style="width: 32px; height: 32px;"></i>
-                            <p class="fs-5 mb-4 italic">"Aidora's post-award management gave our team the capacity to focus on community delivery. I successfully navigated our first major federal audit with zero findings."</p>
+                            <p class="fs-5 mb-4 italic">"GrantFlow's post-award management gave our team the capacity to focus on community delivery. I successfully navigated our first major federal audit with zero findings."</p>
                             <h6 class="mb-1">Dr. Sarah Jenkins</h6>
                             <p class="small text-secondary mb-0">Executive Director, Local Health Initiative</p>
                             <span class="badge bg-primary-subtle text-primary mt-3">$1.2M Federal Health Grant Managed</span>
@@ -615,7 +680,7 @@
                     <div class="swiper-slide">
                         <div class="premium-card theme-card text-center py-5 px-4">
                             <i data-lucide="quote" class="text-warning opacity-25 mb-3" style="width: 32px; height: 32px;"></i>
-                            <p class="fs-5 mb-4 italic">"Having Aidora write and structure our proposal made all the difference. The proposal was highly professional, rigorous, and clearly articulated our theory of change."</p>
+                            <p class="fs-5 mb-4 italic">"Having GrantFlow write and structure our proposal made all the difference. The proposal was highly professional, rigorous, and clearly articulated our theory of change."</p>
                             <h6 class="mb-1">Elena Rostova</h6>
                             <p class="small text-secondary mb-0">Founder, Green Earth Community Alliance</p>
                             <span class="badge bg-warning-subtle text-warning mt-3">3 Foundation Grants Awarded</span>
@@ -631,10 +696,6 @@
     <section class="section-padding position-relative overflow-hidden">
         <div class="container">
             <div class="premium-card theme-card p-5 rounded-5 shadow-2xl reveal-up position-relative overflow-hidden">
-                <!-- Background decoration -->
-                <div class="position-absolute top-0 end-0 p-5 opacity-10 text-primary d-none d-lg-block">
-                    <i data-lucide="help-circle" style="width: 250px; height: 250px;"></i>
-                </div>
                 
                 <div class="row align-items-center position-relative z-1">
                     <div class="col-lg-7">
@@ -690,8 +751,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <div class="d-flex align-items-center mb-4">
-                        <i data-lucide="shield-check" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
-                        <span class="fw-bold fs-4 text-primary">Aidora</span>
+                        <i data-lucide="award" class="me-2 text-primary" style="width: 32px; height: 32px;"></i>
+                        <span class="fw-bold fs-4 text-primary">GrantFlow</span>
                     </div>
                     <p class="text-secondary">Dedicated freelance post-award grant management for nonprofits and educational institutions.</p>
                     <div class="d-flex gap-3 mt-4 footer-socials">
@@ -743,7 +804,7 @@
             </div>
             <hr class="my-5 border-secondary">
             <div class="text-center text-secondary small">
-                <p class="mb-0">&copy; 2026 Aidora | Freelance Grant Specialist. All rights reserved.</p>
+                <p class="mb-0">&copy; 2026 GrantFlow | Freelance Grant Specialist. All rights reserved.</p>
             </div>
         </div>
     </footer>
